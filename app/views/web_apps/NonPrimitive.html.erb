@@ -1,0 +1,169 @@
+<html>
+<head>
+  <title>Non-Primitive Data types</title>
+</head>
+<style>
+  dt{
+  background-color: aquamarine;
+  }
+</style>
+<script>
+//**********Object************
+var prod = {ProductId:1,
+                    Name:"Nike Shoe",
+                   Price:4000.40,
+                    isInStock:true,
+                   Photo:"/shoe.jpg",
+                  cities:["Delhi","Mumbai","Hyderabad"]
+              };
+
+function ShowClick() {
+  document.getElementById("hide").style.display = "block";
+  document.getElementById("details").style.display = "block";
+  document.getElementById("pic").src = prod.Photo;
+  document.getElementById("prodId").innerHTML= prod.ProductId;
+  document.getElementById("prodName").innerHTML= prod.Name;
+  document.getElementById("prodPrice").innerHTML= "&#8377;"+prod.Price;
+  document.getElementById("shipped").innerHTML=prod.cities;
+
+  if(prod.isInStock==true)
+  {
+    stock = "Available";
+  }
+  else
+  {
+    stock="Out of Stock";
+  }
+  document.getElementById("IsInstock").innerHTML= stock;
+}
+function HideClick() {
+
+  document.getElementById("details").style.display = "none";
+  document.getElementById("hide").style.display = "none";
+
+}
+//**********Array of objects*****************
+var products = [
+  {Id:0,
+  Name:"Nike Shoe",
+  Price:4000.40,
+  Photo:"/shoe.jpg"
+
+  },
+  {Id:1,
+    Name:"Bag",
+    Price:502.3,
+    Photo:"/bag.jpg"
+  }
+];
+function ShowProduct() {
+  document.getElementById("viewProduct").style = "block"
+  var index = document.getElementById("index").value;
+  document.getElementById("prodsId").innerHTML = products[index].Id;
+  document.getElementById("prodsName").innerHTML = products[index].Name;
+  document.getElementById("prodsPrice").innerHTML = "&#8377;"+products[index].Price;
+  document.getElementById("pics").src = products[index].Photo
+}
+
+//**********Object************
+</script>
+<body bgcolor="#e9967a">
+<h1>Array Type</h1>
+*************************************************************
+<h1>Object</h1>
+<ol>
+  <li>JavaScript is object based programming system.</li>
+
+<li>An Object in javascript comprises of set of properties and methods.</li>
+  <li>We can create an instance for JavaScript object in order to access its members.</li>
+  <li>The members of object are invoked by using "dot" operator.</li>
+  <li>The properties are defined with a value and methods are defined with function.</li>
+ <li>
+  <details>
+    <summary>
+      JavaScript object type encapsulates all the members in "{}".
+    </summary>
+    <pre>
+      Syntax: var object = {Property: Value,Method:function(){}};
+      object.Property;
+      object.Method();
+    </pre>
+  </details>
+  </li>
+
+</ol>
+
+<details>
+  <summary>
+    <font size="3" style="font-weight: bold">Object Example</font>
+  </summary>
+  <div>
+
+    <form>
+      <input type="button" value="Show Product Details" onclick="ShowClick();" style="background-color: cadetblue;color: white">
+      <input type="button" id="hide" value="Hide Product Details" onclick="HideClick();" style="background-color: cadetblue;color: white;display: none"><br><br>
+      <table id="details" width="561" border="1" style="display: none;text-align: center" bgcolor="white">
+        <tr>
+          <td><img id="pic" width="200" height="200"></td>
+
+          <td>
+
+            <table frame="box" rules="all" align="center" width="350" style="text-align: center" bgcolor="white">
+              <tr>
+                <td>Product id</td>
+                <td id="prodId"></td>
+              </tr>
+              <tr>
+                <td>Product Name</td>
+                <td id="prodName"></td>
+              </tr>
+              <tr>
+                <td>Product Price</td>
+                <td id="prodPrice"></td>
+              </tr>
+              <tr>
+                <td>Stock</td>
+                <td id="IsInstock"></td>
+              </tr>
+              <tr>
+                <td>Shipped To</td>
+                <td id="shipped"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</details>
+
+<!--//**********Array of Object****************-->
+
+  <details>
+    <summary> <font size="4" style="font-weight: bold">Array of Objects Example</font></summary>
+    <div align="" style="width: 10cm;background-color: white">
+      <form>
+        <fieldset>
+          <legend>Product info</legend>
+          <input type="number" id="index" min="0" max="1" value="" placeholder="Select product" onchange="ShowProduct();" style="width: 5cm"> Select index Number
+        </fieldset><br><br>
+        <fieldset style="display:none" id="viewProduct">
+          <legend>View Product</legend>
+          <dl>
+            <dt>Product ID</dt>
+            <dd id="prodsId"></dd>
+            <dt>Product Name</dt>
+            <dd id="prodsName"></dd>
+            <dt>Product Price</dt>
+            <dd id="prodsPrice"></dd>
+            <dt>Preview</dt>
+            <dd><img id="pics" width="300" height="200" style="float: left"></dd>
+          </dl>
+        </fieldset>
+      </form>
+    </div>
+  </details>
+
+
+</body>
+</html>

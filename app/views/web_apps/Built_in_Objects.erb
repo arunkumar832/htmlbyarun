@@ -1,0 +1,1315 @@
+
+<html>
+<head>
+  <title>Built in Objects</title>
+</head>
+<style>
+  #slidecontainer {
+    width: 100%;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.9;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 19px;
+    height: 20px;
+    border: 0;
+    opacity: 0.9;
+    background:  blue;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 19px;
+    height: 20px;
+    opacity: 0.9;
+    border: 0;
+    background: blue;
+    cursor: pointer;
+  }
+</style>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script>
+  function bodyload() {
+
+    function hisload() {
+      history.forward();
+      if(history.length>3)
+      {
+        location.href = "http://htmlbyarun.cf";
+      }
+      else
+      {
+        document.getElemenyById("hismsg").innerHTML = "You can view maximum of 3 pages"
+      }
+    }
+
+
+    var urlvariable = ["date", "math", "string", "array", "emi", "bmi"];
+    for (i = 0; i < urlvariable.length; i++) {
+      urlname = "http://htmlbyarun.cf/web_apps/Built_in_Objects#" + urlvariable[i];
+      if (window.location == urlname) {
+        document.getElementById(urlvariable[i]).open = true;
+      }
+    }
+    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var now = new Date();
+    var wishes = document.getElementById("wishes");
+    var wishmsg = document.getElementById("wishmsg");
+    if(now.getHours() >= 0 && now.getHours() < 12)
+    {
+      wishes.style.display = "block";
+      wishmsg.innerHTML = "Good Morning";
+      timer();
+    }
+    if(now.getHours() >= 12 && now.getHours() < 16)
+    {
+      wishes.style.display = "block";
+      wishmsg.innerHTML = "Good Afternoon";
+      timer();
+    }
+    if(now.getHours() >= 16 && now.getHours() < 22)
+    {
+      wishes.style.display = "block";
+      wishmsg.innerHTML = "Good Evening";
+      timer();
+    }
+    if(now.getHours() >= 22 && now.getHours() < 24)
+    {
+      wishes.style.display = "block";
+      wishmsg.innerHTML = "Good Night";
+      timer();
+    }
+    function timer() {
+      setTimeout(function ()
+          {
+            wishes.style.display='none'
+          }, 3000
+      );
+    }
+
+//    document.write(now.getDate()+ " " +days[now.getDay()]+", "+months[now.getMonth()]+ "-"+now.getFullYear());
+  }
+</script>
+
+<script>
+
+  function Refresh() {
+    var a = Math.random()*10;
+    var b = Math.random()*10;
+    var c = Math.random()*10;
+    var d = Math.random()*10;
+    var e = Math.random()*10;
+    document.getElementById("mesg").innerHTML = Math.round(a)+" "+Math.round(b)+" "+Math.round(c)+" "+Math.round(d)+" "+Math.round(e);
+//    document.getElementById("mesg").innerHTML = a+" "+b+" "+c+" "+d+" "+e;
+
+  }
+</script>
+
+<body bgcolor="#faebd7" onload="bodyload()">
+<noscript>
+<div style="width: 12cm;margin-left: 12cm;" align="center">
+  <marquee> <font size="7" color="red">Please Enable JavaScript on your browser</font></marquee>
+</div>
+</noscript>
+<div  style="border: dashed;height: 3cm;display:none;" id="wishes">
+<div style="background-color: burlywood;height: 2.8cm;border: double" id="wishbox">
+<h1 align="center">Hello Arunkumar <strong id="wishmsg"></strong></h1>
+</div>
+</div>
+<h1 align="center">Built in Objects</h1>
+-> JavaScript is an Object based programming System that inbuilt have several document objects supported by the core library to handle:
+<ol>
+  <li><details id="date">
+    <summary>Date</summary>
+    <ol>
+      <li>It provides a set of methods that are used to get or set client date</li>
+      <li>All the date functions in JavaScript return a number.</li>
+      <li>It is a non-static object, hence we need an instance to acces its members.</li>
+      <li>The JavaScript Data members are shown below:
+      <table border="1" rules="all" align="center" style="text-align-last: center">
+        <thead >
+          <th>Member</th>
+          <th>Description</th>
+        </thead>
+        <tr>
+          <td>getHours()</td>
+          <td>returns hour number in 24hr format (14 = 2:00PM).</td>
+        </tr>
+        <tr>
+          <td>getMinutes()</td>
+          <td>returns minute number.</td>
+        </tr>
+        <tr>
+          <td>getSeconds()</td>
+          <td>returns seconds number.</td>
+        </tr>
+        <tr>
+          <td>getDate()</td>
+          <td>returns current date number (Ex: 11 (i.e october 11)).</td>
+        </tr>
+        <tr>
+          <td>getDay()</td>
+          <td>returns weekdaty number (Ex: 0=Sunday).</td>
+        </tr>
+        <tr>
+          <td>getMonth()</td>
+          <td>returns the month number (Ex: 0= january).</td>
+        </tr>
+        <tr>
+          <td>getFullYear()</td>
+          <td>returns year number (Ex: 2017).</td>
+        </tr>
+        <tr>
+          <td>toLocalTimeString()</td>
+          <td>returns current client time (Ex: 03:40:45 PM).</td>
+        </tr>
+        <tr>
+          <td>toLocalDateString()</td>
+          <td>returns current client Date (Ex: 10/11/2017).</td>
+        </tr>
+      </table>
+      </li>
+    </ol>
+    <ul><u>Example: Display Current System Date</u>
+    <pre>
+    &ltscript&gt
+      var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      var now = new Date();
+      document.write(now.getDate()+ " " +days[now.getDay()]+", "+months[now.getMonth()]+ "-"+now.getFullYear());
+    &lt/script&gt
+      </pre>
+      <u>Output:</u>
+    <script>
+      var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+      var now = new Date();
+      document.write(now.getDate()+ " " +days[now.getDay()]+", "+months[now.getMonth()]+ "-"+now.getFullYear());
+    </script>
+    </ul>
+  </details></li>
+  <li>
+    <details id="math">
+    <summary>Math</summary>
+    <div>
+      <ol>
+        <li>The JavaScript Math object provides a set of properties and methods that are used to perform various mathematical opertions.</li>
+        <li>It is an object with Static member, hence we can access the members by using the object name instead of creating an instance.</li>
+        The functions are:
+        <table border="1" rules="all" style="text-align-last: center">
+          <thead>
+            <th>Example</th>
+          <th>Returned Value</th>
+          </thead>
+          <tr>
+            <td>Math.abs(-6.5)</td>
+            <td>6.5</td>
+          </tr>
+          <tr>
+            <td>Math.acos(.5)</td>
+            <td>1.0</td>
+          </tr>
+          <tr>
+            <td>Math.asin(1)</td>
+            <td>1.5</td>
+          </tr>
+          <tr>
+            <td>Math.atan(.5)</td>
+            <td>0.4</td>
+          </tr>
+          <tr>
+            <td>Math.ceil(7.6)</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>Math.cos(.4)</td>
+            <td>0.9</td>
+          </tr>
+          <tr>
+            <td>Math.exp(8)</td>
+            <td>2980.95</td>
+          </tr>
+          <tr>
+            <td>Math.floor(8.9)</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>Math.log(5)</td>
+            <td>1.6</td>
+          </tr>
+          <tr>
+            <td>Math.max(1,700)</td>
+            <td>700</td>
+          </tr>
+          <tr>
+            <td>Math.min(1,700)</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Math.pow(6,2)</td>
+            <td>36</td>
+          </tr>
+          <tr>
+            <td>Math.ransom()</td>
+            <td>.7877896</td>
+          </tr>
+          <tr>
+            <td>Math.round(.567)</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Math.sin(Math.PI)</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Math.sqrt(9801)</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Math.tan(1.5*Math.PI)</td>
+            <td>"INF(infinity)"</td>
+          </tr>
+
+        </table>
+          <details>
+            <summary><u>Example for Random number generation.</u></summary>
+            <form>
+              <div id="mesg"></div>
+              <br>
+              <input type="button" value="Random Number" onclick="Refresh()">
+            </form>
+            <pre>
+          &ltscript&gt
+            function Refresh() {
+                var a = Math.random()*10;
+                var b = Math.random()*10;
+                var c = Math.random()*10;
+                var d = Math.random()*10;
+                var e = Math.random()*10;
+                document.getElementById("mesg").innerHTML = Math.round(a)+" "+Math.round(b)+" "+Math.round(c)+" "+Math.round(d)+" "+Math.round(e);
+              //document.getElementById("mesg").innerHTML = a+" "+b+" "+c+" "+d+" "+e;
+
+              }
+          &lt/script&gt
+
+        </pre>
+          </details>
+        </li>
+      </ol>
+
+    </div>
+
+
+  <ul type="box"><li>
+    CAPTCHA:- Completely Automated Public Turing Test to tell Computer and Humans Apart
+    <!--<div class="g-recaptcha" data-sitekey="6LfeMzQUAAAAAMfsGsbSZB5hTtTFYAZYG-cmNn5y"></div>-->
+    <!--<button-->
+    <!--class="g-recaptcha"-->
+    <!--data-sitekey="6LejNTQUAAAAAESlwkmRlxzVpWxog9CLD6g9N_nV"-->
+    <!--data-callback="YourOnSubmitFn">-->
+      <!--Submit-->
+    <!--</button>->This button is for invisible captch on background-->
+  </li>
+  </ul>
+  </details>
+    <ul type="a">
+      <li>
+        <details id="emi">
+          <summary>Assignment: EMI Calculator</summary>
+          <form>
+          <table border="2" rules="all" bgcolor="#5f9ea0" align="center" width="300" style="height: 5cm;font-size: larger">
+            <thead style="background: Green;color: white;text-align-last: center" >
+            <th >Description</th>
+            <th colspan="2">Your Values</th>
+            </thead>
+            <tr>
+              <td>Loan Amount</td>
+            <td><input type="text" id="loanAmt" placeholder="Enter Loan Amount" style="text-align-last: center"></td>
+            <td><input type="range" min="0" max="5000000" value="" class="slider" id="myRange1"></td>
+            </tr>
+            <tr>
+              <td>Loan Length in Months</td>
+              <td><input type="text" id="noMonths" placeholder="Enter No. of Months" style="text-align-last: center"></td>
+              <td><input type="range" min="0" max="5000000" value="" class="slider" id="myRange2"></td>
+            </tr>
+            <tr>
+              <td>Interest Rate</td>
+              <td><input type="text" id="intr" placeholder="Enter Interest Rate" style="text-align-last: center"></td>
+              <td><input type="range" min="0" max="5000000" value="" class="slider" id="myRange3"></td>
+            </tr>
+            <tr>
+              <td>Monthly Payment</td>
+              <td><input type="text" id="pay" disabled style="text-align-last: center"></td>
+            </tr>
+            <tr align="center">
+              <td ><input type="button" value="Calculate" onclick="EmiCal()"  style="background: orange;width: 7cm;color: white;height: 1cm"></td>
+              <td colspan="2"><input type="reset" value="Reset" id="Reset" style="background: darkturquoise;width: 8cm;height: 1cm"></td>
+            </tr>
+          </table>
+          </form>
+        </details>
+      </li>
+      <li>
+        <details id="bmi">
+          <summary>Assignment: BMI Calculation</summary>
+          <form>
+            <table border="2" rules="all" bgcolor="#5f9ea0" align="center" width="300" style="height: 5cm;font-size: larger">
+              <thead style="background: Green;color: white;text-align-last: center" >
+              <th >Description</th>
+              <th colspan="2">Your Values</th>
+              </thead>
+              <tr>
+                <td>Your Weight(kg):</td>
+                <td><input type="text" name="weight" size="25" id="weight" placeholder="Enter Your Weight" style="text-align-last: center"></td>
+              </tr>
+              <tr>
+                <td>Your Height(cm):</td>
+                <td><input type="text" name="height" size="25" id="height" placeholder="Enter Your Height" style="text-align-last: center"></td>
+              </tr>
+              <tr align="center">
+                <td ><input type="button" value="Calculate BMI" onclick="calculateBmi()"  style="background: orange;width: 7cm;color: white;height: 1cm"></td>
+                <td colspan="2"><input type="reset" id="Reset" onclick="document.getElementById('reasontr').style.display = 'none';" style="background: darkturquoise;width: 8cm;height: 1cm"></td>
+              </tr>
+              <tr>
+                <td>Your BMI:</td>
+                <td><input type="text" name="bmi" size="25" id="bmival" disabled placeholder="Your BMI is here" style="text-align-last: center"></td>
+              </tr>
+              <tr id="reasontr" style="display: none">
+                <td>This Means:</td>
+                <td><input type="text" name="meaning" size="25" id="reason" disabled placeholder="Reason is here" style="text-align-last: center"></td>
+              </tr>
+            </table>
+          </form>
+        </details>
+      </li>
+    </ul>
+
+  </li>
+
+  <script language="JavaScript">
+<!--
+function calculateBmi() {
+var weight = document.getElementById("weight").value;
+var height = document.getElementById("height").value;
+var bmivalue = document.getElementById("bmival");
+var reason = document.getElementById("reason");
+  var reasontr = document.getElementById("reasontr");
+if(weight > 0 && height > 0){
+var Bmi1 = weight/(height/100*height/100);
+  if(Bmi1 % 1 == 0)
+    var Bmiout=parseInt(Bmi1);
+  else
+     Bmiout = Bmi1.toFixed(4);
+document.getElementById("bmival").value = Bmiout;
+if(Bmiout < 18.5){
+document.getElementById("reason").value = "That you are too thin."
+}
+if(Bmiout > 18.5 && Bmiout < 25){
+document.getElementById("reason").value = "That you are healthy."
+}
+if(Bmiout > 25){
+document.getElementById("reason").value = "That you have overweight."
+}
+}
+  if((weight.length == "" && height.length == "")||(weight.length == "" || height.length == "" ))
+  {
+    bmivalue.style.color = "red";
+    bmivalue.style.fontWeight = "bold";
+    bmivalue.value = 'Please Enter Valid inputs';
+    reasontr.style.display= "none";
+  }
+  else
+  {
+    bmivalue.style.color = "blue";
+    bmivalue.style.fontWeight = "bold";
+    reason.style.color = "blue";
+    reason.style.fontWeight = "bold";
+    reasontr.removeAttribute("style","display:none");
+  }
+}
+//-->
+
+</script>
+<script>
+
+  function EmiCal(){
+     loanAmt = document.getElementById("loanAmt").value;
+     noMonths = document.getElementById("noMonths").value;
+     intr = document.getElementById("intr").value;
+     var pay = document.getElementById("pay");
+    if((loanAmt.length == "" && noMonths.length == "" && intr.length == "")||(loanAmt.length == "" || noMonths.length == "" || intr.length == ""))
+    {
+      pay.style.color = "red";
+      pay.style.fontWeight = "bold";
+      pay.value = 'Please Enter Valid inputs';
+    }
+    else
+    {
+      pay.style.color = "blue";
+      pay.style.fontWeight = "bold";
+      var paym = loanAmt * intr / (1-(Math.pow(1/(1+intr),noMonths)));
+      if(paym % 1 == 0)
+        var emiout=parseInt(paym);
+      else
+        emiout = paym.toFixed(4);
+      pay.value  = emiout;
+    }
+
+  }
+</script>
+  <script>
+    var output1 = document.getElementById("loanAmt");
+    var slider1 = document.getElementById("myRange1");
+//    var output = document.getElementById("demo");
+    output1.innerHTML = slider1.value;
+
+    slider1.oninput = function() {
+      output1.innerHTML = this.value;
+      document.getElementById("loanAmt").value = this.value;
+    };
+
+    var output2 = document.getElementById("noMonths");
+    var slider2 = document.getElementById("myRange2");
+    //    var output = document.getElementById("demo");
+    output2.innerHTML = slider2.value;
+
+    slider2.oninput = function() {
+      output2.innerHTML = this.value;
+      document.getElementById("noMonths").value = this.value;
+    };
+
+    var output3 = document.getElementById("intr");
+    var slider3 = document.getElementById("myRange3");
+    //    var output = document.getElementById("demo");
+    output3.innerHTML = slider3.value;
+
+    slider3.oninput = function() {
+      output3.innerHTML = this.value;
+      document.getElementById("intr").value = this.value;
+    }
+  </script>
+  <li>
+    <details id="string">
+    <summary>String</summary>
+    <form>
+    Enter your College Name: <input type="text" placeholder="Block Letters" id="colgName" onblur="ColgName()">
+      Enter the Branch: <input type="text" placeholder="Block Letters" id="colgBranch" oninput="ColgBranch()">
+    <div id="mes"></div>
+      <div id="mes2"></div>
+    </form>
+      <script>
+        var msg = "Welcome to JavaScript";
+        document.write("--->Character at 3 is: "+msg.charAt(3)+"<br>");
+        document.write("--->Index of first 'e' is: "+msg.indexOf('e')+"<br>");
+        document.write("--->Index of last 'e' is: "+msg.lastIndexOf('e')+"<br>");
+        document.write("--->Substring from index 6 is: "+msg.substr(6)+"<br>");
+        document.write("--->Substring from index 6 is: "+msg.substr(6,3)+"<br>");
+        document.write("--->length of the given string is: "+msg.length);
+
+
+        function ColgBranch() {
+          var colgBranch = document.getElementById("colgBranch").value;
+          document.getElementById("colgBranch").value = colgBranch.toUpperCase();
+          var mes = document.getElementById("mes2");
+            u  = colgBranch.bold();
+            mes.innerHTML = "Branch is "+u.toUpperCase();
+        }
+        function ColgName() {
+
+          var colgName = document.getElementById("colgName").value;
+          var mes = document.getElementById("mes");
+
+          document.getElementById("colgName").value = colgName.toUpperCase();
+          if(colgName.length<4)
+          {
+            alert("College Name should be more than 4 characters");
+            document.getElementById("colgName").value = "";
+
+          }
+          else{
+            u  = colgName.bold();
+            mes.innerHTML = "Welcome to "+u.toUpperCase();
+          }
+        }
+      </script>
+    <div>
+      <ul>
+      <details>
+        <summary><u> String Object</u></summary>
+
+        <ol>
+          <li>The JavaScript String Object provides set of properties and Methods that are used to format and manipulate the string dynamically</li>
+          <li>The string formating functions are:
+          <table border="1" rules="all" align="center" style="text-align-last: center">
+            <thead>
+            <th>Function</th>
+            <th>Description</th>
+            </thead>
+            <tr>
+              <td>big()</td>
+              <td>Sets font size to large</td>
+            </tr>
+            <tr>
+              <td>blink()</td>
+              <td>Blinks the given text (Not support for all browsers)</td>
+            </tr>
+            <tr>
+              <td>bold()</td>
+              <td>Sets font to bold</td>
+            </tr>
+            <tr>
+              <td>fixed()</td>
+              <td>Sets Normal font size</td>
+            </tr>
+            <tr>
+            <td>fontcolor()</td>
+            <td>Sets a font color</td>
+          </tr>
+            <tr>
+              <td>fonrsize()</td>
+              <td>Sets font size</td>
+            </tr>
+            <tr>
+              <td>italics()</td>
+              <td>Sets font style to italic</td>
+            </tr>
+            <tr>
+              <td>small()</td>
+              <td>Sets font level small</td>
+            </tr>
+            <tr>
+              <td>strike()</td>
+              <td>Sets &ltstrike&gt effect</td>
+            </tr>
+            <tr>
+              <td>sub()</td>
+              <td>Sets subscript</td>
+            </tr>
+            <tr>
+              <td>sup()</td>
+              <td>Sets superscript</td>
+            </tr>
+            <tr>
+              <td>toLowerCase()</td>
+              <td>Converts all letter to Lower case</td>
+            </tr>
+            <tr>
+              <td>toUpperCase()</td>
+              <td>Converts all letter to Upper case</td>
+            </tr>
+          </table>
+            <u>Syntax</u>
+            <pre>
+            &ltscript&gt
+             var str = "Welcome to JavaScript";
+             str.bold();
+            &lt/script&gt
+              </pre>
+          </li>
+
+        </ol>
+
+      </details>
+        <details>
+          <summary><u>String Manipulation Functions</u></summary>
+          <table border="2" rules="all" align="center">
+            <thead>
+            <th>Member</th>
+            <th>Description</th>
+            </thead>
+            <tr>
+              <td>charAt()</td>
+              <td>It returns the character at the specified index</td>
+            </tr>
+            <tr>
+              <td>indexOf()</td>
+              <td>It returns the index number of character in a string <br>and it returns '-1' if the specified character is not found</td>
+            </tr>
+            <tr>
+              <td>lastIndexOf()</td>
+              <td>It returns the last occuring index of given character in a string.</td>
+            </tr>
+            <tr>
+              <td>subString()</td>
+              <td>It returns the characters between the specified range of index.</td>
+            </tr>
+            <tr>
+              <td>length</td>
+              <td>It returns the total count of characters in a given string.</td>
+            </tr>
+          </table>
+          <u>Example: Verifying Email id</u>
+          <div>
+            <form>
+              Enter Email: <input type="text" placeholder="Enter Email id" id="email">
+              <i id="emailmsg"></i><br>
+              <u>Example: Exctract username and domain name from email address</u><br>
+              <span id="emaildet"></span>
+              <input type="button" value="Verify" onclick="Verify()">
+            </form>
+            <script>
+              function Verify() {
+                var email = document.getElementById("email").value;
+                var emailmsg = document.getElementById("emailmsg");
+                var atpos = email.indexOf("@");
+                var dotpos = email.lastIndexOf(".");
+                var compos = email.lastIndexOf("com");
+                var emaildet = document.getElementById("emaildet");
+                if(atpos <= 1 && (dotpos-atpos) < 2 && compos == -1 ) {
+                  if (email.length == "") {
+                    emailmsg.innerHTML = "<font color='red'>" + "Please input an email id" + "</font>";
+                  }
+                  else
+                  {
+                    emailmsg.innerHTML = "<font color='red'>"+"Invalid email id"+"</font>";
+
+                  }
+                }
+                else
+                  emailmsg.innerHTML = "<font color='blue'>"+"Email Verified"+"</font>";
+                  var index = email.indexOf("@");
+                  var emailid = email.substr(0,index);
+                  var dom = email.substr(index+1);
+                emaildet.innerHTML = "Your UserName: "+emailid+"<br>"+"Domain Name: "+dom+"<br>"+"Hello!"+emailid+"<br>";
+
+              }
+            </script>
+            <script>
+              var str = "Welcome to JavaScript. It is a client side script";
+
+//                Count no of Vowels and display Vowels with index numbers
+            </script>
+          </div>
+
+        </details>
+        <div>
+          <details>
+            <summary><u>Assignment: Count Vowels and Display Vowel and its index</u></summary>
+            Enter Text: <input type="text" id="Vtxt"  placeholder="Enter the text" oninput="Vowel()"><br>
+            <input type="button" value="vowels" onclick="Vowel()">
+            <div id="vowelmsg"></div>
+            <div id="txtmsg0"></div>
+            <div id="txtmsg1"></div>
+            <div id="txtmsg2"></div>
+            <div id="txtmsg3"></div>
+            <div id="txtmsg4"></div>
+          </details>
+          <script>
+            function Vowel() {
+              var Vtxt = document.getElementById("Vtxt").value;
+              var txtmsg = document.getElementById("txtmsg0");
+//              var string = "Welcome to JavaScript. It is a client side script";
+              var count = 0;
+              for(var i=0; i<Vtxt.length;i++)
+              {
+                switch(Vtxt[i].toLowerCase())
+                {
+                  case 'a':
+                    document.getElementById("txtmsg0").innerHTML = "The character 'a' at index: "+i;
+                    count++;
+                        break;
+                  case 'e':
+                    document.getElementById("txtmsg1").innerHTML = "The character 'e' at index: "+i;
+                    count++;
+                        break;
+                  case 'i':
+                    document.getElementById("txtmsg2").innerHTML = "The character 'i' at index: "+i;
+                    count++;
+                        break;
+                  case 'o':
+                    document.getElementById("txtmsg3").innerHTML = "The character 'o' at index: "+i;
+                    count++;
+                        break;
+                  case 'u':
+                    document.getElementById("txtmsg4").innerHTML = "The character 'u' at index: "+i;
+                    count++;
+                        break;
+                }
+
+                document.getElementById("vowelmsg").innerHTML = "No of Vowels are: "+count;
+
+              }
+
+            }
+          </script>
+        </div>
+      </ul>
+    </div>
+
+  </details></li>
+  <li><details id="array">
+    <summary>Array</summary>
+    <u>Array Object</u>
+    <ol>
+      <li>Array is a JavaScript built-in object.</li>
+      <li>It is a collection of various types of elements stored in a sequential order.</li>
+      <li>Array Resembles a collection which includes Stack, Queue, Hash Table, Enumeration etc.</li>
+      <li>array Size can be changed dynamically.</li>
+      <li>Array's will reduce overhead and complexity.</li>
+      <li>Array's reduce overhead by storing values in sequential order and they reduce <br>
+        complexity by storing muliple values under single name.</li>
+      <li>JavaScript array can be defined by using:</li>
+      <ul>
+        <li>Array Type</li>
+        <u>Syntax:</u><br>
+              var cities = [];
+        <li>Constructor</li>
+        <u>Syntax:</u><br>
+              var cities = [];
+      </ul>
+      <li>JavaScript array object provides the following numbers to create and manipulate array.</li>
+    </ol>
+    <table border="2" rules="all" align="center" style="text-align-last: center">
+      <thead>
+        <th>Member</th>
+        <th>Description</th>
+      </thead>
+      <tr>
+        <td>concat()</td>
+        <td>It is used to join one or more arrays and return the copy of new array.</td>
+      </tr>
+      <tr>
+        <td>indexOf()</td>
+        <td>It returns the index number of specified element in array.</td>
+      </tr>
+      <tr>
+        <td>lastIndexOf()</td>
+        <td>It returns the last occurence number of the given element.</td>
+      </tr>
+      <tr>
+        <td>join()</td>
+        <td>It Reads all elements from an array and prints them by using specified delimeter(,-,/).</td>
+      </tr>
+      <tr>
+        <td>sort()</td>
+        <td>It sorts the elements in an array.</td>
+      </tr>
+      <tr>
+        <td>reverse()</td>
+        <td>It prints the array elements in reverse order.</td>
+      </tr>
+      <tr>
+        <td>pop()</td>
+        <td>It removes and returns the last element from an array.</td>
+      </tr>
+      <tr>
+        <td>push()</td>
+        <td>It adds a new element towards the bottom of an array (i.e Last element).</td>
+      </tr>
+      <tr>
+        <td>shift()</td>
+        <td>It removes the first element and returns the element.</td>
+      </tr>
+      <tr>
+        <td>unshift()</td>
+        <td>It adds a new element towards the begining of an array.</td>
+      </tr>
+      <tr>
+        <td>slice()</td>
+        <td>It selects and returns a part of an array.</td>
+      </tr>
+      <tr>
+        <td>toString()</td>
+        <td>It returns the elements in an array in a string form separated with ','.</td>
+      </tr>
+      <tr>
+        <td>length</td>
+        <td>It returns the total count of elements in an array.</td>
+      </tr>
+
+    </tr>
+
+    </table>
+    <div>
+      <u><b>Example 1: Displaying Contents in an Array</b></u><br>
+      <script>
+        var cities = new Array(2);
+        cities[0] = 1;
+        cities[1] = "Chennai";
+        cities[2] = 1.43;
+        cities[3] = true;
+          document.write("<ul>Array Content is: "+cities.toString()+"</ul>");
+      </script>
+    </div>
+    <div>
+      <u><b>Example 2: Reading Elements from Array and Concatenate </b></u><br>
+      <script>
+        var south = new Array("Hyd","Chennai");
+        var north = new Array("Delhi","Mumbai");
+          var cities = south.concat(north);
+          document.write("<ul><b>List to String : </b>"+cities.toString()+"<br>");
+          document.write("<b>Join with Seperator: </b>"+cities.join(" <-|-> ")+"</ul>"); //We can change the symbol between two array data.
+      </script>
+    </div>
+    <div>
+      <u> <b>Example 3: Sort and Reverse Array Elements </b></u><br>
+      <script>
+        var cities = new Array("Mumbai",'Delhi',"Banglore","Hyd","Chennai")
+        document.write("<ul><b>Actual order : </b>"+cities.toString()+"<br>");
+        document.write("<b>Reverse order before Sorting: </b>"+cities.reverse()+"<br>");
+        document.write("<b>Sorted order : </b>"+cities.sort()+"<br>");
+        document.write("<b>Reverse order after Sorting: </b>"+cities.reverse()+"</ul><br>");
+//        document.write("<b>Join with Seperator: </b>"+cities.join(" <-|-> ")); //We can change the symbol between two array data.
+      </script>
+    </div>
+    <div>
+      <u> <b>Example 4: Remove and Extract Array Elements </b></u><br>
+      <script>
+        var cities = new Array("Mumbai",'Delhi',"Banglore","Hyd","Chennai")
+        var s = cities.slice(2,5);
+        document.write("<ul><b>Actual List : </b>"+cities.toString()+"<br>");
+        var e = cities.pop();
+        document.write(e+"<b> is removed (Last Element) from the list</b>"+"<br>");
+        document.write("<b>New List: </b>"+cities.toString()+"<br>");
+        var f = cities.shift();
+        document.write(f+"<b> is removed (First Element) from the list</b>"+"<br>");
+        document.write("<b> New list: </b>"+cities.toString()+"<br>");
+        document.write("<b> Cities from South: </b>"+s.toString()+"- sliced"+"</ul>");
+        //        document.write("<b>Join with Seperator: </b>"+cities.join(" <-|-> ")); //We can change the symbol between two array data.
+      </script>
+    </div>
+    <div align="center">
+      <u> <b>Example 5: Add and Search for Elements in an Array </b></u><br>
+      <form>
+        <fieldset>
+          <legend>Array Manipulation</legend>
+          <select size="4" id="AlstProducts">
+
+          </select><br>
+          <input type="button" value="Show list" onclick="ShowClick()"><br>
+          <br><br>
+
+          <input type="text" id="AtxtName"><br>
+          <input type="button" value="Push" onclick="PushClick()">
+          <input type="button" value="UnShift" onclick="UnShiftClick()">
+          <input type="button" value="Search" onclick="SearchClick()">
+        </fieldset>
+      </form>
+      <script>
+        products = new Array("TV","Mobile","Nike Shoe","Lee Boots");
+        products = products.toUpperCase();
+          function getList() {
+            AlistProducts = document.getElementById("AlstProducts");
+            name = document.getElementById("AtxtName").value.toUpperCase();
+            AlistProducts.innerHTML = "";
+            for(var i=0;i<products.length;i++)
+            {
+              var opt = document.createElement("option");
+              opt.text = products[i].toUpperCase();
+              opt.value = products[i].toUpperCase();
+                AlistProducts.appendChild(opt);
+            }
+          }
+          function ShowClick() {
+            getList();
+          }
+          function PushClick() {
+            name = document.getElementById("AtxtName").value.toUpperCase();
+            products.push(name);
+            alert("Elements added towards end");
+            getList();
+            document.getElementById("AtxtName").value = "";
+          }
+        function UnShiftClick() {
+          name = document.getElementById("AtxtName").value.toUpperCase();
+          products.unshift(name);
+          alert("Elements added towards Begining");
+          getList();
+          document.getElementById("AtxtName").value = "";
+        }
+        function SearchClick() {
+          name = document.getElementById("AtxtName").value.toUpperCase();
+          if(products.indexOf(name)== "-1")
+          {
+            alert("Item Not Found");
+          }
+          else
+          {
+            alert("Item Found");
+          }
+        }
+      </script>
+    </div>
+  </details></li>
+</ol>
+<h1 align="center">Browser Objects</h1>
+
+<ul>
+  <h4><b>Note:</b> How to verify JavaScript enable or not on client browser?</h4>
+  <li>Using &ltnoscript&gt element</li>
+  <li>It contains message that is displayed when javascript is disabled in the browser.</li>
+  <li><u>Syntax</u>
+    <pre>
+      &ltnoscript&gt
+        Please Enable JavaScript on your browser
+      &lt/noscript&gt
+    </pre>
+  </li>
+</ul>
+<ol>
+  <li><details>
+    <summary>window</summary>
+    <ul>
+      <li>It provides a set of properties and methods that are used to manipulate the browser window</li>
+      <table align="center" rules="all" border="2" style="text-align-last: center">
+        <thead>
+        <th>Member</th>
+        <th>Description</th>
+        </thead>
+        <tr>
+          <td>open()</td>
+          <td>It opens the specified document or URL in a new window.</td>
+        </tr>
+        <tr>
+          <td>close()</td>
+          <td>It closes the current browser widow or tab.</td>
+        </tr>
+        <tr>
+          <td>print()</td>
+          <td>It Invokes the printer properties and prints the current page contents.</td>
+        </tr>
+        </thead>
+      </table>
+        <u><b>Example:</b></u>
+          <form>
+            <a href="javascript:OpenWindow()">Home</a><span>|</span>
+            <a href="javascript:window.print()">Print</a><span>|</span>
+            <a href="javascript:window.close()">Close</a>
+          </form>
+      <script>
+        function OpenWindow() {
+          window.open("http://htmlbyarun.cf","Home","width=300,height=300")
+        }
+      </script>
+    </ul>
+  </details></li>
+  <li><details>
+    <summary>location</summary>
+    <ul>
+      <li>The JavaScript location object provides a set of properties and methods that are used to access the client location details. such as url, ip address, port etc</li>
+      <table align="center" border="2" rules="all" style="text-align-last: center">
+        <thead>
+        <th>Member</th>
+        <th>Description</th>
+        <tr>
+          <td>host</td>
+          <td rowspan="2">Retuns the server name or ip address</td>
+        </tr>
+         <tr>
+          <td>hostname</td>
+         </tr>
+        <tr>
+          <td>protocol</td>
+          <td>returns the protocol like http,http, ftp etc </td>
+        </tr>
+        <tr>
+          <td>port</td>
+          <td>Returns tje port number from where the server is being accessed</td>
+        </tr>
+        <tr>
+          <td>href</td>
+          <td>gets and sets the url. i.e It can access the url and redirect to specified url</td>
+        </tr>
+        <tr>
+          <td>hash</td>
+          <td>It returns the location on page using '#' value</td>
+        </tr>
+        <tr>
+          <td>search</td>
+          <td>It returns the querstring passed in url</td>
+        </tr>
+        <tr>
+          <td>pathname</td>
+          <td>It returns the folder and page name in Virtual path.</td>
+        </tr>
+        <tr>
+          <td>reload()</td>
+          <td>It reloads the current page.</td>
+        </tr>
+        </thead>
+      </table>
+      <li>
+        <u><b>Example-1:</b></u>
+        <div align="center">
+        <form>
+          <input type="button" value="Get Client Location Details" onclick="DetailsClick()">
+          <input type="button" value="Refresh" onclick="location.reload()"><br><br>
+          <dl id="hostdetails" style="display: none">
+            <dt>ServerName/IP address:</dt>
+            <dd id="host"></dd>
+            <dt>Protocol</dt>
+            <dd id="protocol"></dd>
+            <dt>URL</dt>
+            <dd id="locurl"></dd>
+          </dl>
+          <style>
+            dt{
+              background-color: red;
+              color: white;
+              font-size: 3;
+            }
+          </style>
+          <script>
+            function DetailsClick() {
+              document.getElementById("hostdetails").style.display = "block";
+              var h = location.host;
+              document.getElementById("host").innerHTML = h;
+              var p = location.protocol;
+              document.getElementById("protocol").innerHTML = p;
+              if(p == "http:" ||p =='https:')
+              {
+                document.getElementById("protocol").innerHTML = "Your are using "+p;
+//                  document.getElementById("protocol").innerHTML = "Please Host your website on server";
+              }
+              else
+              {
+                document.getElementById("protocol").innerHTML = "Please Host your website on server";
+              }
+
+              document.getElementById("locurl").innerHTML = location.href;
+            }
+          </script>
+        </form>
+        </div>
+      </li>
+      <li>
+        <u><b>Location hash property</b></u>
+        <ul>
+        <li>The location object <u>hash</u> property is used to access the recently viwed location on page.</li>
+          <li>It can be identified by using "#" reference in the url.</li>
+
+          <li><u><b>Example-2: </b></u>Check the <a href="http://htmlbyarun.cf">home page</a> to view example with button "Recent Visits".<br>
+            But before that you need to view page-2 so that button will works since we recently didn't visit any #ids in that page</li>
+
+        </ul>
+      </li>
+      <li>
+        <u><b>Location search property</b></u>
+        <ul>
+          <li>The search property for location object is used to access the query string from URL.</li>
+          <li>The Qeury Strings are appended into URL.</li>
+          <li>When form is submitted on get request.</li>
+          <li>
+            <u><b>Example-3: Google search </b></u>
+            <div align="center">
+            <form>
+              <font size="6">Google</font><br>
+              <br>
+              <input type="text" size="40" id="txtSearch" name="txtSearch"><br><br>
+              <input type="submit" value="Search">
+              <input type="button" value="Get keywords" onclick="GetQuery()"><br><br>
+              <i id="searchmsg"></i>
+            </form>
+              <script>
+                function GetQuery() {
+
+                  var str = location.search;
+                  var eqpos = str.indexOf("=");
+                  var substr = str.substring(eqpos+1).indexOf("+");
+                  document.getElementById("searchmsg").innerHTML = "You are searching for: "+str.substring(eqpos+1);
+                }
+              </script>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </details></li>
+  <li>
+    <details>
+      <summary>navigation</summary>
+      <ul>
+        <li>JavaScript navigator object provides a set of properties that are used to access the client browser details.</li>
+        <li>Such as: browser, family, language, version, plugins, cookie status etc.
+          <table border="2" rules="all" style="text-align-last: center" align="center">
+            <thead>
+            <th>Properties</th>
+            <th>Description</th>
+            <tr>
+              <td>appName</td>
+              <td>It returns the browser's family name. E.g: NetScape</td>
+            </tr>
+            <tr>
+              <td>appVersion</td>
+              <td>It returns the current browser version.</td>
+            </tr>
+            <tr>
+              <td>userAgent</td>
+              <td>It returns all the supported platforms for browser.</td>
+            </tr>
+            <tr>
+              <td>plugins[]</td>
+              <td>It gives access to the collection of all plugins that<br> are installed on the browser.
+                Browser cannot show the<br> content if plugin is not supported. </td>
+            </tr>
+            <tr>
+              <td>mimeTypes[]</td>
+              <td>It is a collection of media types, which verifies the type of <br>file that can be accessed on browser.</td>
+            </tr>
+            <tr>
+              <td>cookieEnabled</td>
+              <td>It returns the cookie status in boolean 'true' or 'false'.</td>
+            </tr>
+            <tr>
+              <td>platform</td>
+              <td>It returns the client system platform.i.e. win 32/64/linux etc.</td>
+            </tr>
+            <tr>
+              <td>language</td>
+              <td>It returns the current browser language.</td>
+            </tr>
+            <tr>
+              <td>systemlanguage</td>
+              <td>It returns the client system  regional language.</td>
+            </tr>
+            </thead>
+          </table>
+        </li>
+        <li>
+          <u><b>Example-1: Get Browser Details </b></u>
+
+            <form>
+              <input type="button" value="Get Browser Details" onclick="GetSysDet()" ><br>
+              <div align="center">
+              <dl id="det" style="display: none;border: double">
+                <dt>Browser Family</dt>
+                <dd id="family"></dd>
+                <dt>Browser Version</dt>
+                <dd id="ver"></dd>
+                <dt>Langugae</dt>
+                <dd id="lang"></dd>
+                <dt>System Language</dt>
+                <dd id="syslang"></dd>
+                <dt>Supported on</dt>
+                <dd id="agent"></dd>
+                <dt>Cookie enabled</dt>
+                <dd id="cookie"></dd>
+                <dt>Platform</dt>
+                <dd id="plat"></dd>
+
+              </dl>
+              </div>
+            </form>
+            <script>
+              function GetSysDet() {
+                document.getElementById("det").style.display = "block";
+                document.getElementById("family").innerHTML = navigator.appName;
+                document.getElementById("ver").innerHTML = navigator.appVersion;
+                document.getElementById("lang").innerHTML = navigator.language;
+                document.getElementById("syslang").innerHTML = navigator.systemLanguage;
+                document.getElementById("agent").innerHTML = navigator.userAgent;
+                document.getElementById("plat").innerHTML = navigator.platform;
+                if(navigator.cookieEnabled == true)
+                {
+                  msg = "Cookie Enabled";
+                }
+                else
+                {
+                  msg = "Cookie Disabled";
+                }
+                document.getElementById("cookie").innerHTML = msg;
+              }
+            </script>
+
+        </li>
+        <li>
+          <div>
+            <u><b>Example-2: Plugins Verification </b></u>
+            <form action="/prashanth.pdf">
+              <button onclick="viewPlugins()">List all Plugins</button>
+                <input type="submit"  src="" onclick="verifyPlugin()" value="Read Prashanth Document">
+            </form>
+            <script>
+              function viewPlugins() {
+                for(var i=0; i<navigator.plugins.length;i++)
+                {
+                  document.write(navigator.plugins[i].name + "<br");
+                }
+              }
+              function verifyPlugin() {
+                if(navigator.plugins['Chrome PDF Viewer']==undefined)
+                {
+                  alert("You need PDF read Plugins please install");
+                 location.href = "http://www.adobe.com/downloads";
+                }
+                else
+                {
+                  alert("Congratz you can view pdf documents");
+                }
+              }
+            </script>
+          </div>
+        </li>
+      </ul>
+    </details>
+  </li>
+  <li>
+    <details open>
+    <summary>history</summary>
+      <ul>
+        <li>The history object provides set of properties and methods that are used to access the client browsing history.</li>
+
+          <table border="2" align="center" style="text-align-last: center" rules="all">
+            <thead>
+            <th>Properties</th>
+            <th>Description</th>
+            <tr>
+              <td>length</td>
+              <td>It returns the total count of pages present in browser history</td>
+            </tr>
+            <tr>
+              <td>back()</td>
+              <td>It moves to the previous page in the browser history.</td>
+            </tr>
+            <tr>
+              <td>forward()</td>
+              <td>It moves to the next page in the browser history.</td>
+            </tr>
+            <tr>
+              <td>go()</td>
+              <td>It moves to any specified page in browsing history.</td>
+            </tr>
+            </thead>
+          </table>
+
+        <div>
+          <u><b>Example: History </b></u>
+          <div id="hismsg" onload="hisload()"></div>
+          <form>
+            <input type="button" onclick="hisView()" value="No of browser history">
+            <button onclick="history.back()">Back</button>
+            <button onclick="history.forward()">Forward</button>
+            <!--<button onclick="history.go('http://htmlbyarun.cf')">Go to Home page</button>-->
+            <button onclick="history.go(-6)">Go Back to 6th page in history</button>
+          </form>
+            <script>
+              function hisView() {
+                document.getElementById("hismsg").innerHTML = "Your browser history has : "+history.length + " histories."
+              }
+            </script>
+        </div>
+      </ul>
+  </details>
+  </li>
+
+</ol>
+</body>
+</html>

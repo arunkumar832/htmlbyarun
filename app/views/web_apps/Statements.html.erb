@@ -1,0 +1,125 @@
+<html  oncontextmenu="return false" onselectstart="return false" onselect="SelectFunction()" oncut="return false" oncopy="return false">
+<head>
+  <title>Statements</title>
+</head>
+<script>
+  function retun() {
+    document.write = "statment-1";
+    return;
+    document.write = "statment-2";
+    document.write = "statment-3";
+  }
+</script>
+<script>
+  document.oncontextmenu = function() {
+    return false;
+  }
+  function SelectFunction()
+  {
+    return false;
+  }
+</script>
+<body>
+
+<b>Select statements are of:</b><br>
+if statemnets
+  <ol>
+    <li>Forward Jump</li>
+    <li>Simple Condition</li>
+    <li>Multiple Condition</li>
+    <li><a href="http://htmlbyarun.cf/web_apps/MultiLevelCondition">MultiLevel Conditions</a></li>
+  </ol>
+Select Statement
+<ol>
+  <li><a href="http://htmlbyarun.cf/web_apps/SelectStatement#switch" target="_blank">Switch Case statement</a>
+  <ul>
+    <li><a href="http://htmlbyarun.cf/web_apps/SelectStatement#switch&#switchexample" target="_blank">Example: Change products info and display details using switch</a></li>
+  </ul></li>
+</ol>
+
+<b>Iteration statements:</b>
+  <ol>
+    <li>Iterator is a software design pattern</li>
+    <li>It is a behavioural pattern used to access the elements from a collection in sequential order.</li>
+    <li>The statements that are used to design iterations are:
+    <ol type="a">
+      <li><a href="http://htmlbyarun.cf/web_apps/SelectStatement#for&#fortext" target="_blank">for</a>
+      <ul>
+        <li><a href="http://htmlbyarun.cf/web_apps/SelectStatement#for&#fortext&#Amazon" target="_blank">Amazon Shopping Example: Using For loop to read and add elements Dynamically from a collection</a></li>
+        <li><a href="http://htmlbyarun.cf/web_apps/SelectStatement#for&#fortext&#kfc" target="_blank">KFC Example: Selection in webpage using radio and checkbox controls</a></li>
+        <li><a href="http://htmlbyarun.cf/web_apps/SelectStatement#for&#fortext&#hotel" target="_blank">Assignment: Hotel Management form</a></li>
+
+      </ul>
+      </li>
+      <li><a href="http://htmlbyarun.cf/web_apps/SelectStatement#while" target="_blank">while</a></li>
+      <li><a href="http://htmlbyarun.cf/web_apps/SelectStatement#do_while" target="_blank">do while</a></li>
+    </ol>
+    </li>
+  </ol>
+<b>Jump Statements:</b>
+<ol>
+
+  <li>
+    <details>
+      <summary>break</summary>
+
+  It is a jump statement that terminates the execution of current block according to the given condition.<br>
+  <u>Syntax</u>
+      <pre>
+        &ltscript&gt
+           for(var i = 1; i<=10; i++)
+            {
+              if(i ==5 )
+                {
+                  break;
+                  document.write(i+"&ltbr&gt");
+                }
+            }
+        &lt/script&gt
+      </pre>
+  </details>
+  </li>
+  <li>
+    <details>
+      <summary>continue</summary>
+      It is a jump statment that skips the execution of specific counter and continues the next counter in a looping control statement.<br>
+      <u>Syntax</u>
+      <pre>
+        &ltscript&gt
+          for(var i = 1; i<=10; i++)
+            {
+              if(i ==5 || i ==8 )
+                {
+                  continue;
+                  document.write(i+"&ltbr&gt");
+                }
+            }
+        &lt/script&gt
+      </pre>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary>return</summary>
+      <ol>
+      <li>It is a jump statement used in functions to terminate the execution of statements or disable the function.</li>
+        <li>The statements that are defined after return keyword are not reachable to compiler or interpreter.</li>
+      </ol>
+
+      <ul><u>Example: Disable right click, selection,cut and copy in the document</u></ul>
+      <pre>
+        &ltscript&gt
+           document.oncontextmenu = function() {
+              return false;
+           }
+           function SelectFunction()
+           {
+              return false;
+           }
+        &lt/script&gt
+      </pre>
+    </details>
+  </li>
+</ol>
+</body>
+</html>

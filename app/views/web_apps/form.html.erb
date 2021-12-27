@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<h1 align="center">***************Welcome to form page*************</h1>
+<div style="margin-top: 5%; ">
+
+
+<form action="http://htmlbyarun.cf/web_apps/formdata" style="">
+  <fieldset style=" width: 3cm;margin-left: 13.5cm;">
+    <legend>Form Fieldset</legend>
+  <table align="center" cellspacing="10" frame="box">
+  <tr><td>NAME:</td><td><input type="text" placeholder="Enter your name" autofocus required pattern="[A-Z]{4,10}" maxlength="10">
+  <i>Block letters only</i>
+  </td></tr>
+  <tr><td>EMAIL:</td><td><input type="email" placeholder="Enter your email id"></td></tr>
+  <tr><td>PASSWORD:</td><td><input type="password"  placeholder="Enter your password"></td></tr>
+  <tr>
+    <td>List Box</td>
+    <td><select size="3" multiple>
+      <option value="man">Manager</option>
+      <option value="cust">Customer</option>
+      <option value="emp">Employee</option>
+      <option value="std">Student</option>
+      <option value="Other">Others</option>
+    </select></td>
+  </tr>
+    <tr>
+      <td>Data List</td>
+      <td><input type="text" list="list">
+      <datalist id="list">
+        <option>Home</option>
+        <option>Assignment</option>
+        <option>Form</option>
+        <option>iframes</option>
+        <option>Frames</option>
+      </datalist>
+      </td>
+    </tr>
+  <tr><td>DOB:</td><td><select required name="dob">
+    <option selected value="-1">Please select date</option>
+    <option value="1">10/03/1994</option>
+    <option value="2">11/03/1994</option>
+    <optgroup label="label-1">
+    <option value="3">12/03/1994</option>
+    <option value="4">13/03/1994</option>
+    <option value="5">14/03/1994</option>
+    <option value="6">15/03/1994</option>
+    </optgroup>
+    <optgroup label="label-2">
+    <option disabled>16/03/1994</option>
+    <option value="7">17/03/1994</option>
+    <option value="8">18/03/1994</option>
+    <option value="9">19/03/1994</option>
+    <option value="10">20/03/1994</option>
+  </optgroup>
+  </select></td></tr>
+  <tr>
+    <td>Gender</td>
+    <td > MALE<input type="radio" name="gender" value="male" checked><!--checked attribute to avoid deadlock in mutex(Mutual exclusive) process-->
+    FEMALE<input type="radio" name="gender" value="female"></td>
+  </tr>
+    <tr>
+      <td>Range</td>
+      <td><input type="range" min="100" max="1000" value="50"> </td>
+    </tr>
+  <tr>
+    <td>Progress</td>
+    <td>
+      <progress></progress>Process<br>
+      <progress max="100" value="20"></progress>20% completed<br>
+      <progress max="100" value="50"></progress>50% completed<br>
+      <progress max="100" value="80"></progress>80% completed<br>
+      <progress max="100" value="100"></progress>100% completed<br>
+    </td>
+  </tr>
+  <tr>
+    <td>Meter</td>
+    <td>
+      <meter min="1" max="100" value="100" low="10" high="20" ></meter>Strong<br>
+      <meter min="1" max="100" value="80" low="20" high="50" ></meter>Good<br>
+      <meter min="1" max="100" value="60" low="40" high="55" ></meter>Weak<br>
+      <meter min="1" max="100" value="32" low="33" high="50" ></meter>Poor<br>
+      <meter></meter>Not Available
+    </td>
+  </tr>
+  <tr>
+    <td>Keygen</td>
+    <td> <keygen>qqqqq</keygen> </td>
+  </tr>
+  <tr>
+    <td>Text area</td>
+    <td> <textarea style="width: 8cm;"></textarea> </td>
+  </tr>
+  <tr>
+    <td> <input type="file" name="Upload Image"> </td>
+  </tr>
+    <tr>
+      <td colspan="4"> <input type="checkbox" name="agree" value="agree" checked>I agree with your cache savage for further improvements</tr></td>
+    <tr>
+    <td colspan="2" align="center"><input type="submit" name= "submit"></td>
+  </tr>
+  </table>
+  </fieldset>
+</form>
+
+  </div>

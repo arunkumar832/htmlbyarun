@@ -1,0 +1,104 @@
+<html>
+<head>
+  <title>Events</title>
+</head>
+<body bgcolor="#5f9ea0">
+<h1>Event Handler</h1>
+<ol>
+  <li>The JavaScript objects use a deligate mechanism (Function pointer) for handling the events.</li>
+  <li>Event Handler refers to specified function and event sends a message to the function to notify the change</li>
+  <li>The members of current object are accessible to the function by using the keyword this.</li>
+  <li>The signature of Event Handler must match with the function signature, so that it can access the referred values.</li>
+    <ul>
+      <li>
+        <details>
+          <summary>Example 1: Two Different buttons using same handler but performing different functionality.</summary>
+          <br>
+          <div>
+            <form>
+              <input type="button" value="Insert" name="BtnInsert" onclick="Button_click(this)">
+              <input type="button" value="Delete" name="BtnDelete" onclick="Button_click(this)">
+              <div id="msgd"></div>
+            </form>
+            <script>
+                function Button_click(param) {
+                    alert("You Clicked "+param.value+" Button");
+                      if(param.value != 'Insert')
+                      {
+                          document.getElementById("msgd").innerHTML = "<br><font color='red'>Record Deleted</font>"+"<br>You clicked "+param.name+ " and onclick = "+param.onclick+"<br><br>";
+                      }
+                      else
+                      {
+                          document.getElementById("msgd").innerHTML = "<br><font color='green'>Record Inserted</font>"+"<br>You clicked "+param.name+ " and onclick = "+param.onclick+"<br><br>";
+                      }
+                }
+            </script>
+          </div>
+        </details>
+      </li>
+      <li>
+  <details>
+    <summary>Example 2: Multiple Parameters on Event passed to function as reference.</summary>
+    <br>
+    <div>
+      <form>
+        <input type="button" value="Insert" name="Insert" onclick="Mul_Button_click(this.value,this.name,this.onclick)">
+        <div id="msg1"></div>
+      </form>
+      <script>
+          function Mul_Button_click(valueParam,nameParam,clickParam) {
+              alert("You Clicked "+valueParam+" Button");
+              document.getElementById("msg1").innerHTML = "<br><font color='green'>Record Inserted</font>"+"<br>Parameter Name: "+nameParam+ "<br>onclick = "+clickParam+"<br><br>";
+          }
+      </script>
+    </div>
+  </details>
+</li>
+      <li>
+        <details>
+          <summary>Example 3: Accessing Event properties and Multiple Functionality.</summary>
+          <ul>
+            <li>The Keyword "event" is defined in the handler that allows the formal parameter to access event properties.</li>
+          </ul>
+          <br>
+          <div>
+            <form>
+              <input type="button" value="Mouse On Me" onmousemove="Mul_click(event)" onclick="Insert_Click()" size="7" style="height: 2cm;background: green;color: white" >
+              <div id="msg2"></div>
+            </form>
+            <script>
+                function Mul_click(param) {
+                    document.getElementById("msg2").innerHTML = "<br>X-Axis: "+param.clientX+"<br>Y-Axis: "+param.clientY+"<br><br>";
+                }
+                function Insert_Click() {
+                    alert("Record Inserted");
+                }
+            </script>
+          </div>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Example 4: Various buttons using different handlers but performing same functionality.</summary>
+          <br>
+          <div>
+            <form>
+              <input type="button" value="Insert" name="BtnInsert" onclick="Ins_click(this)">
+              <input type="button" value="Delete" name="BtnDelete" onclick="Del_click(this)">
+              <div id="msg3"></div>
+            </form>
+            <script>
+                function Ins_click(param) {
+                    document.getElementById("msg3").innerHTML = "Record Inserted"+"<br><br>";
+                }
+                function Del_click(param) {
+                    Ins_click();
+                }
+            </script>
+          </div>
+        </details>
+      </li>
+    </ul>
+</ol>
+</body>
+</html>

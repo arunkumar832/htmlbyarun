@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>Assignments</title>
+</head>
+<script></script>
+<body onmousemove="UpdateFlyingObj(event)">
+<details>
+  <summary>Assignment 1</summary>
+  <table align="center" border="2">
+    <tr>
+      <td align="center" bgcolor="#228b22"  width="125"><a href="http://htmlbyarun.cf"><font size="5" color="white">Home</font></a></td>
+      <td align="center" bgcolor="#228b22" width="1900" height="100" ><font size="5"  color="white">Welcome to Products list website</font></td>
+    </tr>
+    <tr>
+      <table>
+        <td align="center" bgcolor="#228b22" height="60" id="td">
+          <font size="3" color="white">
+            <a href="http://htmlbyarun.cf/web_apps/shoe" target="frameBody"><font size="5">Shoes</font></a><br>
+            <a href="http://htmlbyarun.cf/web_apps/clothes" target="frameBody"><font size="5">Clothes</font></a><br>
+            <a href="http://htmlbyarun.cf/web_apps/bag" target="frameBody"><font size="5">Bags</font></a><br>
+            <a href="http://htmlbyarun.cf/web_apps/acc" target="frameBody"><font size="5">Accessories</font></a>
+          </font>`
+        </td>
+        <td>
+          <iframe height="650" width="1500" name="frameBody" src="http://htmlbyarun.cf/web_apps/shoe">
+          </iframe>
+        </td>
+      </table>
+
+      <table>
+        <td align="center" bgcolor="#228b22" width="1900" height="70" ><font size="5" color="white">&copy;COPYRIGHT 2017</font></td>
+
+      </table>
+  </table>
+</details>
+  <div>
+    <style>
+      #flying
+      {
+        position: fixed;
+      }
+    </style>
+    <details open>
+      <summary>Assignment : Mouse move to show Different color birds</summary>
+
+      <div align="center" >
+        <font size="4" style="font-weight: bold;color: green">
+          Wait for <i style="color: red">5sec</i> if color of bird is not loaded<br>
+          <small>because i'm not using any hosting for gif's (Like AWS S3) and are taking more storage and loading slowly
+            but once it gets loaded then we can we view colors of birds correctly</small>
+          <img src="/color.png" width="550" height="400" >
+        </font>
+      </div>
+      <img src="/blackbird.gif" id="flying" width="100" height="100" style=" ">
+      <script>
+          function UpdateFlyingObj(e) {
+              var flyingobj = document.getElementById("flying");
+              var mouseX = Math.round(e.clientX);
+              var mouseY = Math.round(e.clientY)
+              flyingobj.style.left = mouseX+"px";
+              flyingobj.style.top = mouseY+"px";
+
+              if((e.clientX>= 413 && e.clientX<670) && (e.clientY>50 && e.clientY<244))
+              {
+                  flyingobj.src = "/greenBird.gif";
+              }
+              else if((e.clientX>= 677 && e.clientX<955) && (e.clientY>50 && e.clientY<244))
+              {
+                  flyingobj.src = "/bluebird.gif";
+              }
+              else if((e.clientX>= 413 && e.clientX<670) && (e.clientY>250 && e.clientY<440))
+              {
+                  flyingobj.src = "/voiletbird.gif";
+              }
+              else if((e.clientX>= 675 && e.clientX<954) && (e.clientY>250 && e.clientY<440))
+              {
+                  flyingobj.src = "/woodbird.gif";
+              }
+              else
+                  flyingobj.src = "/blackbird.gif";
+          }
+      </script>
+    </details>
+  </div>
+<div id="divmsg"></div>
+</body>
+</html>

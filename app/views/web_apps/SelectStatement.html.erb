@@ -1,0 +1,833 @@
+<html>
+<head>
+  <title>Select Statement</title>
+
+</head>
+<script>//This is for Switch case
+  function SelProduct() {
+    var pproducts = [
+      {
+        ProductId:101,
+        Name:"Bag",
+        Price: 450.64,
+        Photo:"/bag.jpg"
+      },
+      {
+        ProductId:102,
+        Name:"Nike Casual Shoe",
+        Price: 5000.35,
+        Photo:"/shoe.jpg"
+      }
+    ];
+    var pic = document.getElementById("image");
+    var pId = document.getElementById("prodId");
+    var pName = document.getElementById("prodName");
+    var pPrice = document.getElementById("prodPrice");
+
+    var index =  document.getElementById("listProduct").value;
+    var details = document.getElementById("showdetails");
+
+    function GetDetails(index) {
+      details.style.display = "block";
+      pic.src = pproducts[index].Photo;
+      pId.innerHTML = pproducts[index].ProductId;
+      pName.innerHTML = pproducts[index].Name;
+      pPrice.innerHTML = pproducts[index].Price;
+    }
+
+    switch(index)
+    {
+      case "0":
+        GetDetails(index);
+            break;
+      case "1":
+        GetDetails(index);
+            break;
+      default:
+        alert("Please select a product");
+            details.style.display = "none";
+            break;
+    }
+  }
+</script>
+
+<!--Example: Amazon Shopping Using For loop to read and add elements Dynamically from a collection-->
+<script>
+  categories = ["Select your category", "Bags","Shoes"];
+  function bodyload() {
+    var urlvariable = ["for","switch","while","do_while"];
+    for(i = 0;i<urlvariable.length;i++){
+      urlname1 = "http://localhost:3000/web_apps/SelectStatement#"+urlvariable[i];
+    if(window.location==urlname1)
+    {
+     document.getElementById(urlvariable[i]).open = true;
+    }
+    }
+    var urlname = ["Amazon","kfc","hotel"];
+
+    for(i = 0;i<urlname.length;i++)
+    {
+      urlname2 = "http://localhost:3000/web_apps/SelectStatement#for&#fortext&#"+urlname[i];
+    if(window.location == urlname2)
+    {
+      document.getElementById("for").open = true;
+      document.getElementById("fortext").open = true;
+      document.getElementById(urlname[i]).open = true;
+    }
+    }
+    document.getElementById("selectCat").style.display= "block";
+    lstcategories = document.getElementById("lstcat");
+    for(var i = 0; i<categories.length; i++)
+    {
+      var opt = document.createElement("option");
+      opt.text = categories[i];
+      opt.value = categories[i];
+      lstcategories.appendChild(opt);
+    }
+    if(window.location == "http://localhost:3000/web_apps/SelectStatement#switch&#switchexample")
+    {
+      document.getElementById("switch").open = true;
+      document.getElementById("switchexample").open = true;
+    }
+  }
+
+
+  bags = ["Select Bag products","Travel Bag","Hand Bag"];
+  shoes = ["Select Show products","Puma Shoe","Nike Shoe"];
+  function SelectCategory() {
+    lstProducts = document.getElementById("lstpro");
+    selectProducts = document.getElementById("selectPro");
+    switch(lstcategories.value)
+    {
+      case 'Bags':
+        lstProducts.innerHTML="";
+        for(var i = 0; i<bags.length; i++)
+        {
+          var opt = document.createElement("option");
+          opt.text = bags[i];
+          opt.value= bags[i];
+          lstProducts.appendChild(opt);
+        }
+        selectProducts.style.display = "block";
+        break;
+      case 'Shoes':
+        lstProducts.innerHTML="";
+        for(var i=0;i<shoes.length;i++)
+        {
+          var opt = document.createElement("option");
+          opt.text = shoes[i];
+          opt.value= shoes[i];
+          lstProducts.appendChild(opt);
+        }
+        selectProducts.style.display = "block";
+        break;
+      default:
+        alert("Please select category");
+        selectProducts.style.display = "none";
+        productDetails.style.display = "none";
+        lstProducts.innerHTML="";
+        break;
+    }
+
+  }
+
+  function SelectProduct() {
+    pId = document.getElementById("proId");
+    pName = document.getElementById("proName");
+    pPrice = document.getElementById("proPrice");
+    pic = document.getElementById("picture");
+    productDetails = document.getElementById("proDet");
+    var product1s = [
+      {
+        ProductId:1,Name: "Travel Bag",Price:1300.56,Photo:"/Bag2.png"
+      },
+      {
+        ProductId:2,Name: "Hand Bag",Price:800,Photo:"/bag.jpg"
+      },
+      {
+        ProductId:1,Name: "Puma Shoe",Price:300,Photo:"/puma.jpg"
+      },
+      {
+        ProductId:2,Name: "Nike Shoe",Price:200,Photo:"/shoe2.jpg"
+      }
+    ];
+    function details(index) {
+      pic.src = product1s[index].Photo;
+      pId.innerHTML = product1s[index].ProductId;
+      pName.innerHTML = product1s[index].Name;
+      pPrice.innerHTML = "&#8377;" + product1s[index].Price;
+    }
+    lstProducts = document.getElementById("lstpro");
+    switch(lstProducts.value)
+    {
+      case "Travel Bag":
+        var index = 0;
+        details(index);
+        productDetails.style.display = "block";
+        break;
+      case "Hand Bag":
+        var index = 1;
+        details(index);
+        productDetails.style.display = "block";
+        break;
+      case "Puma Shoe":
+        var index = 2;
+        details(index);
+        productDetails.style.display = "block";
+        break;
+      case "Nike Shoe":
+        var index = 3;
+        details(index);
+        productDetails.style.display = "block";
+        break;
+      default:
+        productDetails.style.display = "none";
+        break;
+    }
+  }
+</script>
+
+
+<!--KFC Example: Selection in webpage using radio and checkbox controls-->
+<script>
+  function Summary() {
+    var name = document.getElementById("txtName").value;
+    var txtName = document.getElementById("txtName");
+    var burger = document.getElementById("optBurger");
+    var roller = document.getElementById("optRoller");
+    var krusher = document.getElementById("optKrusher");
+    var fries = document.getElementById("optFries");
+    var summary = document.getElementById("summary");
+    var errorMsg1 = document.getElementById("errorMsg1");
+    var errorMsg2 = document.getElementById("errorMsg2");
+    if(name == "")
+    {
+      errorMsg1.style.display = "block";
+      errorMsg1.innerHTML="<br><font color='red' style='font-weight: bold'>Please Enter Your name</font>";
+      txtName.focus();
+      if(burger.checked || roller.checked)
+      {
+          errorMsg2.style.display = "none";
+      }
+      else
+      {
+        errorMsg2.style.display = "block";
+        errorMsg2.innerHTML="<br><font color='red' style='font-weight: bold'>Please Select option</font>";
+      }
+    }
+    else
+    {
+      errorMsg1.style.display = "none";
+      summary.style.display = "inline-block";
+
+    }
+
+    if(burger.checked || roller.checked)
+    {
+      if(burger.checked)
+      {
+        errorMsg2.style.display = "none";
+        mcost = 120;
+        mname = burger.value;
+      }
+      else if(roller.checked)
+      {
+        mcost = 100;
+        mname = roller.value;
+        errorMsg2.style.display = "none";
+      }
+    }
+    else
+    {
+      errorMsg2.style.display = "block";
+      errorMsg2.innerHTML="<br><font color='red' style='font-weight: bold'>Please Select option</font>";
+    }
+
+    if(krusher.checked)
+    {
+      acost = 80;
+      mcost = mcost + acost;
+    }
+    if(fries.checked)
+    {
+      acost = 60;
+      mcost = mcost + acost;
+    }
+    summary.innerHTML = "Hello! " + name + "<br>" + "Total Bill amount for your meal " + mname + " is "+"&#8377;"+mcost;
+  }
+</script>
+
+<!--Assignment: Hotel Management form-->
+<script>
+  function Reg() {
+    var CustomerName = document.getElementById("CustName").value;
+    var CheckinDate = document.getElementById("CustDate").value;
+    var NoOfPersons = document.getElementById("CustNos").value;
+    var NoOfDays = document.getElementById("CustDays").value;
+    var Advance = document.getElementById("CustAdv").value;
+    var deluxe = document.getElementById("deluxe");
+    var suite = document.getElementById("suite");
+    var ac = document.getElementById("ac");
+    var locker = document.getElementById("locker");
+    var RegDetails = document.getElementById("RegDetails");
+    var custError1 = document.getElementById("custError1");
+    var custError2 = document.getElementById("custError2");
+    var custError3 = document.getElementById("custError3");
+    var custError4 = document.getElementById("custError4");
+    var custError5 = document.getElementById("custError5");
+    var custError6 = document.getElementById("custError6");
+    if (CustomerName == "") {
+      RegDetails.style.display = "none";
+      custError1.style.display = "block";
+      custError1.innerHTML = "Please fill your name";
+
+    }
+    else {
+      custError1.style.display = "none";
+      RegDetails.style.display = "block";
+    }
+    if(CheckinDate == "") {
+      RegDetails.style.display = "none";
+      custError2.style.display = "block";
+      custError2.innerHTML = "Please fill Check in Date";
+
+    }
+    else {
+      custError2.style.display = "none";
+      RegDetails.style.display = "block";
+    }
+    if(NoOfPersons == "")
+    {
+      RegDetails.style.display = "none";
+      custError3.style.display = "block";
+      custError3.innerHTML = "Please Mention No of Persons";
+
+    }
+    else {
+      custError3.style.display = "none";
+      RegDetails.style.display = "block";
+    }
+    if(NoOfDays == "")
+    {
+      RegDetails.style.display = "none";
+      custError4.style.display = "block";
+      custError4.innerHTML = "Please Mention No of Days";
+
+    }
+    else{
+      custError4.style.display = "none";
+      RegDetails.style.display = "block";
+    }
+    if(Advance == "")
+    {
+      RegDetails.style.display = "none";
+      custError6.style.display = "block";
+      custError6.innerHTML = "Please Enter Advance Amount";
+    }
+    else
+    {
+      custError6.style.display = "none";
+      RegDetails.style.display = "block";
+    }
+
+
+    if(deluxe.checked)
+    {
+      rcost = 2500;
+      rname = deluxe.value;
+      custError5.style.display = "none";
+      if(ac.checked)
+      {
+        amcost = (500);
+        rcost = amcost + rcost;
+        amname = ac.value;
+      }
+      if(locker.checked)
+      {
+        amcost = (200);
+        rcost = amcost + rcost;
+        amname = locker.value;
+      }
+    }
+
+    else if(suite.checked)
+    {
+      rcost = 4000;
+      rname = suite.value;
+      custError5.style.display = "none";
+      if(ac.checked)
+      {
+        amcost = (500);
+        rcost = amcost + rcost;
+        amname = ac.value;
+      }
+      if(locker.checked)
+      {
+        amcost = (200);
+        rcost = amcost + rcost;
+        amname = locker.value;
+      }
+
+    }
+    else
+    {
+      RegDetails.style.display = "none";
+      custError5.innerHTML="<br><font color='red' style='font-weight: bold'>Please Select an option</font>";
+    }
+
+
+    if(NoOfPersons>2)
+    {
+      rcost = (rcost + (NoOfPersons*600))*NoOfDays;
+    }
+
+    RegDetails.style.color = "white";
+
+    RegDetails.innerHTML = "Customer Name" + " : " +CustomerName+"<br>"+
+        "Check in Date" + " : " +CheckinDate+"<br>"+
+        "No of Persons" + " : " +NoOfPersons+"<br>"+
+        "No of Days" + " : " +NoOfDays+"<br>"+
+        "Room Type" + " : " + rname+"<br>"+
+        "Advance Amount" + " : " +Advance+"<br>"+
+        "Total Amount Paid" + " : " + rcost +"<br>"+
+        "Balance Amount" + " : " + (rcost-Advance) ;
+
+  }
+</script>
+<body bgcolor="#e9967a" onload="bodyload()">
+<h1 align="center">Select Statement</h1>
+<details id="switch">
+<summary><font size="4" style="font-weight: bold">The Switch Case Statement</font></summary>
+
+<ol>
+  <li>
+    It is a select statement that executes a block of code that matches with the given expression.
+  </li>
+  <li>
+    <details id="switchtext">
+      <summary>It improves the performance when it has to test for multiple conditions when compare to the else-if statement.</summary>
+
+    <u>Syntax</u>
+    <pre>
+    switch(expression)
+    {
+    case constant-expression:
+          statement
+          jump-statement
+    [default:
+              statement
+              jump-statement]
+    }
+  </pre>
+    </details>
+  </li>
+
+</ol>
+  <ol>
+<details id="switchexample">
+  <summary>Example: Change products info and display details using switch</summary>
+<div align="center">
+  <form>
+    <fieldset>
+      <legend>Product Details</legend>
+    <select id="listProduct" onchange="SelProduct()">
+      <option value="-1">Select a product</option>
+      <option value="0">Bag</option>
+      <option value="1">Nike Shoe</option>
+    </select><br><br>
+    <table align="center" border="1" cellpadding="5" cellspacing="5" width="500" id="showdetails" bgcolor="white">
+      <tr>
+        <td><img id="image" width="200" height="200" border="1" alt="Some Image here"></td>
+        <td>
+          <table rules="all" frame="box" align="center" bgcolor="white" id="listProducts">
+            <tr>
+              <td width="150">Product ID</td>
+              <td id="prodId" width="150"></td>
+            </tr>
+            <tr>
+              <td colspan="">Product Name</td>
+              <td id="prodName"></td>
+            </tr>
+            <tr>
+              <td colspan="">Product Price</td>
+              <td id="prodPrice"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    </fieldset>
+  </form>
+</div>
+</details>
+  </ol>
+</details>
+<div >
+<details id="for">
+  <summary><font size="4" style="font-weight: bold">FOR LOOP</font></summary>
+  <ol>
+    <li>
+    It is a looping control statement used to read the elements in a sequential order.
+    </li>
+    <li>
+<details id="fortext">
+  <summary>It is mostly used when the number of iterations are exactly known and iteration counter will not change dynamically.
+    </summary>
+  <pre>
+  <u>Syntax</u>
+
+  for(initialization; condition; iterator)
+    {
+      statements;
+    }
+    </pre>
+    <details>
+      <summary><u>Sample Example</u></summary>
+      <pre>
+  &ltscript&gt
+   for(var i =1; i<=10; i++)
+      {
+      document.write(i+"&ltbr&gt");
+      }
+  &lt/script&gt
+        </pre>
+    </details>
+
+<details>
+  <summary><u>Example: Read properties and values from an object</u></summary>
+  <pre>
+  &ltscript&gt
+      var product = {id:1,Name:"TV",Price:"13000.56"};
+   // document.write("id" in product)//verify whether id is in product or not
+      for(attr in product)
+      {
+        document.write(attr+" : "+product[attr]+"&ltbr&gt");
+      }
+  &lt/script&gt
+    </pre>
+   <ol>
+  <details>
+    <summary>Output</summary>
+    <script>//This is for for-loop//Example: Read properties and values from an object
+    var product = {id:1,Name:"TV",Price:"13000.56"};
+    // document.write("id" in product)//verify whether id is in product or not
+    for(attr in product)
+    {
+      document.write(attr+":"+product[attr]+"<br>");
+    }
+    </script>
+  </details>
+  </ol>
+
+</details>
+  <details id="Amazon">
+    <summary><u>Amazon Shopping Example: Using For loop to read and add elements Dynamically from a collection</u></summary>
+    <div align="center">
+      <form>
+        <font size="3">
+          <table width="500" cellspacing="5" cellpadding="5" align="center" frame="box" rules="all" style="background-color: white">
+            <caption>Amazon Shopping</caption>
+            <tr align="center"  style="display: block;">
+              <td colspan="2" id="selectCat" width="165">
+                <select id="lstcat" onchange="SelectCategory()"></select>
+              </td>
+            </tr>
+            <tr align="center" id="selectPro" style="display: none">
+              <td colspan="2">
+                <select id="lstpro" onchange="SelectProduct()"></select>
+              </td>
+            </tr>
+
+            <tr align="center" id="proDet" style="display: none" >
+              <td><img alt="Some Picture here" width="100" height="100" id="picture"></td>
+              <td>
+                <table frame="box" rules="all" align="center" style="background-color: white">
+                  <tr>
+                    <td colspan="2">Product Id</td>
+                    <td id="proId"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Product Name</td>
+                    <td id="proName"></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">Product Price</td>
+                    <td id="proPrice"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <br>
+          </table>
+        </font>
+      </form>
+    </div>
+  </details>
+  <details  id="kfc" onload="bodyload()">
+    <summary><u>KFC Example: Selection in webpage using radio and checkbox controls</u></summary>
+    <div align="center">
+      <form>
+        <font size="3" color="white">
+          <table align="center" border="1" bgcolor="black">
+            <tr>
+              <td colspan="2">
+                <img src="/kfctop.png" width="1000cm">
+              </td>
+            </tr>
+            <tr align="center">
+              <td colspan="2">
+                <img src="/kfcmiddle.png" width="1000cm">
+              </td>
+            </tr>
+            <tr align="center">
+              <td colspan="2">
+                Select Your Meal
+              </td>
+            </tr>
+            <tr align="center">
+              <td>Customer Name</td>
+              <td>
+                <input type="text" id="txtName" name="Customer Name" placeholder="Enter Your Name">
+                <i id="errorMsg1" style="display: none"></i>
+              </td>
+            </tr>
+            <tr align="center">
+              <td>
+                <label for="optBurger">
+                <img src="/omg1.png">
+                </label><br>
+                <input type="radio" name="meal" value="OMG BURGER" id="optBurger" > OMG BURGER (&#8377;120/-)
+              </td>
+              <td>
+                <label for="optRoller">
+                <img src="/omg2.png">
+                </label><br>
+                <input type="radio" name="meal" value="OMG Roller" id="optRoller" >OMG Roller (&#8377;100/-)
+              </td>
+            </tr>
+            <tr align="center">
+              <td colspan="2">
+                <i id="errorMsg2" style="display: none"></i>
+              </td>
+            </tr>
+            <tr align="center">
+              <td colspan="2">Select Ad ON</td>
+            </tr>
+            <tr align="center">
+              <td>
+                <label for="optKrusher">
+                <img src="/krusher1.png" width="300cm">
+                </label><br>
+                <input type="checkbox" name="" value="Krusher Brownie" id="optKrusher" >Brownie Krusher (&#8377; 80/-)
+              </td>
+              <td>
+                <label for="optFries">
+                <img src="/fries1.png" width="150cm">
+                </label><br>
+                <input type="checkbox" name="" value="Large Fries" id="optFries">Large Fries (&#8377; 60/-)
+              </td>
+            </tr>
+            <tr align="center">
+              <td colspan="2">
+                <input type="button" value="Place Order" onclick="Summary()">
+              </td>
+            </tr>
+            <tr align="center">
+              <td colspan="2">
+                <small id="summary" style="display: none" ></small>
+              </td>
+            </tr>
+          </table>
+
+        </font>
+      </form>
+    </div>
+
+
+  </details>
+
+    <details id="hotel">
+      <summary><u>Assignment: Hotel Management form</u></summary>
+      <div align="center" style="background-color: #ffecad;width: 22cm;margin-left: 5cm;">
+      <form>
+        <fieldset style="width:20cm;">
+          <table  align="center" bgcolor="">
+          <tr align="center">
+            <td>
+              <img src="/hoteltop.jpg">
+            </td>
+          </tr>
+        </table>
+        <fieldset style="width:17.1cm;">
+          <legend align="center">Customer Information</legend>
+          <table rules="all" border="1" align="center" bgcolor="">
+            <tr align="justify">
+              <td colspan="2">Customer Name:</td>
+              <td><input type="text" id="CustName" placeholder="Enter Your Name" onchange="Valid()">
+              <i style="color:red;" id="custError1" style="display: none"></i>
+              </td>
+            </tr>
+            <tr align="justify">
+              <td colspan="2">Checkin Date:</td>
+              <td><input type="date" id="CustDate" style="width: 4.4cm;" onchange="Valid()">
+                <i style="color:red;" id="custError2" style="display: none"></i></td>
+            </tr>
+            <tr align="justify">
+              <td colspan="2">Number of Persons:</td>
+              <td><input type="number" id="CustNos" placeholder="Enter No. of Persons" onchange="Valid()">
+                <i style="color:red;" id="custError3" style="display: none"></i></td>
+            </tr>
+            <tr align="justify">
+              <td colspan="2">Number of Days:</td>
+              <td><input type="number" id="CustDays" placeholder="Enter No. of Days" onchange="Valid()">
+                <i style="color:red;" id="custError4" style="display: none"></i></td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset style="width:4cm;">
+          <legend align="center">Select Room</legend>
+          <table rules="all" border="1" align="center">
+            <tr align="center">
+              <td>
+                <label for="deluxe">
+                <img src="/deluxe.png" width="320cm">
+                </label>
+                <input type="radio" name="room" value="Deluxe Room" id="deluxe"> Deluxe room (&#8377; 2500/day)
+              </td>
+              <td>
+                <label for="suite">
+                <img src="/suite.png" width="320cm">
+                </label>
+                <input type="radio" name="room" value="Suite Room" id="suite"> Suite room (&#8377; 4000/day)
+              </td>
+            </tr>
+            <tr align="center">
+              <td colspan="2">
+                <i style="color:red;" id="custError5"></i>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset style="width:4cm;">
+          <legend align="center">Select Amenity</legend>
+          <table rules="all" border="1" align="center">
+            <tr align="center">
+              <td>
+                <label for="ac">
+                  <img src="/ac.png" width="320cm">
+                </label>
+                <input type="checkbox" id="ac" value="AC"> AC (&#8377; 500/day)
+              </td>
+              <td>
+                <label for="locker">
+                  <img src="/locker.png" width="320cm">
+                </label>
+                <input type="checkbox" id="locker" value="Locker"> Locker (&#8377; 200/day)
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+        <fieldset style="width:17.2cm;">
+          <legend align="center">Advance Amount</legend>
+          <table rules="all" border="1" align="center">
+            <tr align="justify">
+              <td >Advance<i style="color: red">*</i></td>
+              <td>
+                <input type="text" id="CustAdv" placeholder="Enter Advance Amount">
+                <i style="color:red;" id="custError6"></i>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+          <table align="center">
+            <tr align="center">
+              <td>
+                <input type="button" value="Register" style="width: 10cm;
+                    background: cornflowerblue;
+                    color: brown;" onclick="Reg()">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <small id="RegDetails" style="background-color: #2f4f4f;display: none"></small>
+              </td>
+            </tr>
+          </table>
+  </fieldset>
+      </form>
+      </div>
+    </details>
+
+</details>
+    </li>
+  </ol>
+</details>
+</div>
+<div>
+
+</div>
+<div >
+<details id="while">
+  <summary><font size="4" style="font-weight: bold">WHILE LOOP</font></summary>
+ <ul>
+ <li> It is an Iteration statement that is used when the exact no. of iterations are not known and the iteration counter may change dynamically.</li>
+ <li> It comprises of statements that are executed only when the given condition evaluates to true.</li>
+</ul>
+  <ul>
+<details>
+<summary><u>Syntax</u></summary>
+<pre>
+   while(condition)
+   {
+    statements;
+   }
+</pre>
+</details>
+    <details>
+      <summary><u>Example:</u></summary>
+      <pre>
+      &ltscript&gt
+      var i = 1;
+      while(i<=10)
+      {
+        document.write(i + "&ltbr&gt");
+        i++;
+      }
+      &lt/script&gt
+        </pre>
+    </details>
+    </ul>
+</details>
+</div>
+<div>
+  <details id="do_while">
+    <summary><font size="4" style="font-weight: bold">DO-WHILE LOOP</font></summary>
+   It is similar to the while loop but gurantees that the statements will execute atleast once even when the condition evaluates to false.
+  <ul><details>
+<summary><u>Syntax</u></summary>
+<pre>
+   do
+   {
+    statements;
+   }while(condition);
+</pre>
+</details>
+    <details>
+      <summary><u>Example:</u></summary>
+      <pre>
+&ltscript&gt
+   var i = 11;
+   do
+   {
+    document.write(i + "<br>");
+    i++;
+   }while(i<=10);
+&lt/script&gt
+
+        </pre>
+    </details>
+  </ul>
+  </details>
+</div>
+</body>
+</html>

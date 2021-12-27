@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head><title>Input functions</title></head>
+<script>
+function newClick() {
+  folder = prompt("Enter the folder name","Enter_folder_name");
+  document.getElementById("msg").innerHTML += "<p style='color: red'>Folder created by Name:"+folder+"<br>";
+}
+function RegClick() {
+  document.getElementById("register").style.display="none";
+  document.getElementById("details").style.display = "block";
+  name = document.getElementById("Username").value;
+  dob = document.getElementById("txtDob").value;
+  age = document.getElementById("Age").value;
+  city = document.getElementById("lstCity").value;
+  male = document.getElementById("optMale");
+  female = document.getElementById("optFemale");
+
+  if(male.checked)
+    gender = male.value;
+  if(female.checked)
+    gender = female.value;
+
+  document.getElementById("lblName").innerHTML = name;
+  document.getElementById("lblDob").innerHTML = dob;
+  document.getElementById("lblAge").innerHTML = age;
+  document.getElementById("lblGender").innerHTML = gender;
+  document.getElementById("lblCity").innerHTML = city;
+
+}
+</script>
+<body bgcolor="#ffe4c4" >
+<form>
+  <h3>Prompt()</h3>
+  <div id="msg"></div>
+  <p>It alerts an input box that allows the user to input a value dynamically during run-time.<br>
+  It is mostly used when input is expected before the page load.
+  </p>
+  <input type="button" value="Create New Folder" onclick="newClick()">
+  <h3 >Form input elements</h3>
+  <li>HTML provides several form elements such as Text, Radio,Checkbox, DropDown etc.<br></li>
+  <li>JavaScript can access the value that user inputs using form elements.</li>
+  <li>Every Element must be defined with an ID.</li>
+  <ul>&ltinput type= "text" id= "txtName"&gt</ul>
+  <li>JavaScript refers element id and its value</li>
+  <ul>document.getElementById("txtName").value</ul>
+
+  <table width="400"  border="2" cellpadding="5" cellspacing="5" id="register" bgcolor="#008b8b" style="color: white">
+    <caption style="color: black">Register</caption>
+    <tr>
+      <td>Username</td>
+      <td><input type="text" placeholder="Enter your name" id="Username"></td>
+    </tr>
+    <tr>
+      <td>Date of Birth</td>
+      <td><input type="date" id="txtDob"></td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td><input type="number" min="15" max="30" value="22" id="Age"></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+        <input type="radio" name="gender" value="Male" id="optMale" checked>Male
+        <input type="radio" name="gender" value="Female" id="optFemale" >Female
+      </td>
+    </tr>
+    <tr>
+      <td>Select City</td>
+      <td><select id="lstCity">
+        <option value="-1">please select your city</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Hyderabad">Hyderabad</option>
+        </select></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <input type="button" value="Register" onclick="RegClick()">
+      </td>
+    </tr>
+  </table>
+  <!--ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+  <table width="400"  border="2" cellpadding="5" cellspacing="5" id="details" style="color: white;display: none"  bgcolor="#008b8b" >
+    <caption>Details</caption>
+    <tr >
+<td colspan="4">Username</td>
+      <td id="lblName" colspan="4"></td>
+    </tr>
+    <tr >
+      <td colspan="4">Date of Birth</td>
+      <td id="lblDob" colspan="4"></td>
+    </tr>
+    <tr>
+      <td colspan="4">Age</td>
+      <td id="lblAge" colspan="4"></td>
+    </tr>
+    <tr>
+      <td colspan="4">Gender</td>
+      <td id="lblGender" colspan="4"></td>
+    </tr>
+    <tr>
+      <td colspan="4">City</td>
+      <td id="lblCity" colspan="4"></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head><title>alert demo</title></head>
+<script type="text/javascript">
+  function alertbox() {
+    alert("Hello Welcome to JavaScript");
+  }
+  function DeleteClick() {
+    x =confirm("Are you sure you want to delete?");
+    (x==true)?alert("Record is deleted"):alert("Record deletion aborted");
+    (x == true)?console.log("Action Confirmed by the user"):console.log("Action Aborted by the user");
+  }
+  function Hello() {
+    document.write("Welcome to JavaScript");
+  }
+  function HelloInPage() {
+    document.getElementById("hellomsginspan").innerText = "Welcome to JavaScript";
+  }
+  function HelloInPageWithHtml() {
+    document.getElementById("hellomsg").innerHTML = "<marquee>Welcome to JavaScript</marquee>";
+  }
+</script>
+<body bgcolor="#ffe4c4">
+<form>
+  <h1 align="center">Output functions and properties</h1>
+ <h3>Alert button</h3>
+  <p>User have to confirm msg in order to continue with page</p>
+  <input type="button" value="Say Hello" onclick="alertbox()">
+<br> <h3>Confirm </h3>
+  <p>It is similar to alert() but seeks the confirmation by using OK and Cancel.<br> It returns boolean true on OK and false on Cancel</p>
+  <input type="button" value="Delete" onclick="DeleteClick()">
+
+  <br>
+<h3>Document.write()</h3>
+  <p>It is a document function that prints the given msg on new screen. The msg is eraised automatically when we reload the page.</p>
+  <input type="button" value="Say Hello on New Page" onclick="Hello()"><br>
+
+  <h3>Console log</h3>
+  <p>It prints the output in the console of browsers debugger.</p>
+  <input type="button" value="Delete&Console" onclick="DeleteClick()">
+<br>
+
+
+  <h3>Inner HtmL</h3>
+  <div align="center" id="hellomsg"></div>
+  <p>It is a property to render the output in any HTML element such as div , span, p etc.<br>
+    It even supports html elements to format the text</p>
+<input type="button" value="Say Hello in Page" onclick="HelloInPageWithHtml()">
+
+  <h3>Inner Text</h3>
+  <div align="center" id="hellomsginspan"></div>
+  <p>It is similar to inner html but will not support any html formats. It is used to print raw text.</p>
+  <input type="button" value="Say Hello in Page" onclick="HelloInPage()">
+
+</form>
+<br><br><br>
+</body>
+</html>

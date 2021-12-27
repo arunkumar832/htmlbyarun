@@ -1,0 +1,27 @@
+<html>
+<head><title>Using Tag Name</title>
+  <script type="text/javascript">
+    function bodyload() {
+      img  = document.getElementsByTagName("img");
+//          .src = "/men.gif";
+      x = document.getElementsByTagName("input");
+      alert("Total number of input elements : "+(x.length));
+
+    }
+  </script>
+</head>
+<body onload="bodyload()">
+<h2>Using Tag Name</h2>
+
+<img height="100" width="100" name='pic' id="pic">
+
+<form name="form1">
+  <h2>Form1</h2>
+  <input type="text" name='txtName' id="txtName">
+</form>
+<form name="form2">
+  <h2>Form2</h2>
+  <input type="button" name='btntxt'id="btntxt">
+</form>
+</body>
+</html>

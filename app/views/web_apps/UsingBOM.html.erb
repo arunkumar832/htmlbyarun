@@ -1,0 +1,28 @@
+<html>
+<head><title>Example</title>
+  <script type="text/javascript">
+    function bodyload() {
+      window.document.images[0].src="/men.gif";
+      window.document.forms[0].elements[0].value="Arun";
+      window.document.forms[1].elements[0].value="Submit";
+    }
+  </script>
+</head>
+<body onload="bodyload();">
+
+<h2>Using BOM hierarchy</h2>
+<p>In this method HTML elements are accessible by using the document model where every element is defined like an array.<br>
+  We can use the index number to access the element. However, changing the position of an element in a page will effect its reference.</p>
+<div>
+  <img height="100" width="100">
+</div>
+<form>
+  <h2>Form1</h2>
+  <input type="text">
+</form>
+<form>
+  <h2>Form2</h2>
+  <input type="button">
+</form>
+</body>
+</html>

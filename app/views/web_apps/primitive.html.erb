@@ -1,0 +1,137 @@
+<html>
+<head><title>Primitive Data types</title></head>
+<script>
+   var a = "20ABC";
+   var b = "30BCX";
+   var x = "ABC20";//should start with a number to add with y
+   var y = "BCX30";//should start with a number to add with x
+   var d = parseInt(x)+parseInt(y);
+   var c = parseInt(a)+parseInt(b);
+   var xy = 2e3;//2*10pow(3)
+   document.write(xy);
+    document.write("<br>"+c);
+   document.write("<br>"+d);//Not a number error
+</script>
+<body bgcolor="#7fffd4" style="color:darkgreen">
+<h1>Number Type</h1>
+<ol>
+  <li>
+    <details>
+      <summary>
+        A number type represents signed or unsigned integer.
+      </summary>
+      <pre style="color: black">
+  var x = 10;
+  var x = -10;
+    </pre>
+    </details>
+
+    </li>
+
+  <li>
+    <details>
+      <summary>
+        A number type can be floating point or decimal type
+      </summary>
+      <pre style="color: black">
+  var x =4.6
+  var x = 5.5600055;</pre>
+     </details> </li>
+
+  <li>JavaScript represents 32bit number types.Hence the value will be according to the 32bit size.</li>
+  <li>
+    <details>
+      <summary>
+        A javascript number can be extracted from any string with the help of parsing methods.
+      </summary>
+      <ol type="a" style="color: black">
+        <li>parseInt()</li>
+        <li>parseFloat()</li>
+      </ol>
+    </details>
+    </li>
+
+  <li>
+    <details>
+      <summary>
+        The parsing is supported only when it starts with a number.
+      </summary>
+      <pre style="color: black">
+  var a = "20ABC";
+  var b = "30BCX";
+  var c = parseInt(a)+parseInt(b);
+  document.write("C = "+c);//C = 50
+  </pre>
+    </details>
+    </li>
+
+  <li>
+    <details>
+      <summary>
+        JavaScript number can be represented by using entities such as exponentation(e)
+      </summary>
+      <pre style="color: black">
+  var xy = 2e3;//2*10pow(3)
+  document.write(xy);//xy = 2000
+    </pre>
+    </details>
+    </li>
+
+</ol>
+<h1>String Type</h1>
+<ol>
+  <li>A Javascript string type by using " " and ' '.</li>
+  <li>The single quote are used while representing a string in an another string.</li>
+  <li>
+    <details>
+      <summary>
+        The JavaScript string tyoe can be alpha numeric with special character's.
+      </summary>
+      <pre style="color: black">
+     var email = "arun784@gmail.com";
+      </pre>
+
+    </details>
+  </li>
+  <li><details>
+    <summary>Some of the special characters in string representing or not printable to print the non printable characters, we have to use escape sequence characters.</summary>
+    <pre style="color: black">
+     \\  to print \
+     \"  to print "
+     var path = "\"D:\\Images\\cars\\pic.jpg\""; --> "D:\Images\cars\pic.jpg"
+      </pre>
+  </details>
+  </li>
+  <li>
+    <details>
+      <summary>
+        A javascript string type is used as html markup so that tye can render html elements dynamically.
+      </summary>
+      <pre style="color: black">
+    var link = "&lta href='home.html.erb'&gtHome&lt/a&gt"
+        </pre>
+    </details>
+
+   </li>
+  Note: A javascript string representation using html markup can't render html elements dynamically while displaying in RC data elements
+</ol>
+<h1>Boolean Type</h1>
+<ul type="->">
+<li>The Javascript boolean types contains the keyword true or false unlinke other languages in javascript <br>the boolean conditions are satisfied directly using the keywords true or false and not '0' or '1'.</li>
+  <pre>
+<u>Syntax:</u>
+  var x = true;
+  if(x == true)
+  stmts
+    </pre>
+  <details>
+    <summary>Example</summary>
+    <script>
+      var x = true;
+        var y = false;
+        document.write("It is "+x+" that javaScript is Case Sensitive.<br>"+"Above statement is not "+y+".");
+    </script>
+  </details>
+</ul>
+</body>
+</html>

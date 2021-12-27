@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body vlink="#228b22">
+<header id="header">
+  <nav style="background:green;text-align: center;color: white;height:1.5cm;">
+    <menu style="display: inline-block;font-family: cursive;">
+      <a href="http://htmlbyarun.cf/web_apps/home" style="background:transparent;text-decoration-color: turquoise;color: white;">HOME</a>|
+      <a href="http://htmlbyarun.cf/web_apps/about" style="background:transparent;text-decoration-color: turquoise;color: white;">ABOUT</a>|
+      <a href="http://htmlbyarun.cf/web_apps/Contact" style="background:transparent;text-decoration-color: turquoise;color: white;">CONTACT</a>|
+      <a href="http://htmlbyarun.cf/web_apps/form" style="background:transparent;text-decoration-color: turquoise;color: white;">FORM</a>|
+      <a href="http://htmlbyarun.cf/web_apps/js" style="background:transparent;text-decoration-color: turquoise;color: white;">JAVASCRIPT</a>
+    </menu>
+  </nav>
+</header>
+<style>
+  summary
+  {
+    width: 7cm;
+  }
+</style>
+
+<section style="background: aquamarine;height: 20cm;">
+  <h1 align="center">
+    <font face="arial" size="7" color="#8b4513">
+      By Arunkumar G
+    </font>
+  </h1>
+
+  <h5 align="center"><strong>(Batch 2pm)</strong></h5>
+  <details open >
+    <summary>Java</summary>
+    Hello this is Java content.
+  </details>
+  <a href="#page2">Go to 'PAGE-2' for Tables</a>
+  <form>
+    <input type="button" value="Recent Visits" onclick="Recent()">
+  </form>
+  <script>
+    function Recent() {
+      switch(location.hash)
+      {
+        case "#header":
+            alert("You  viewed header part in welcome.html");
+              break;
+        case "#page2":
+          alert("You recently viewed page2 in welcome.html");
+      }
+    }
+  </script>
+  <figure>
+    <a href="https://google.com/some-image-link-here">
+      <img src="sample.png" alt="Some Image here" border="5" style="width: 50%;height: 8cm;display: inline-block;margin-left: 27%;margin-top: -2%;" hspace="10" vspace="5">
+    </a>
+    <figcaption align="center"> Fig.WebPage Contet</figcaption>
+  </figure>
+
+  <dialog open style="background: blanchedalmond;margin-top: 10%; ">
+    <form action="http://htmlbyarun.cf/web_apps/formdata">
+      Name:<input type="text" placeholder="Enter your name"><br>
+      Email:<input type="email" placeholder="Enter your email id"><br>
+      Dob&nbsp;&nbsp;:<select>please select data
+          <option>10/03/1994</option>
+          <option>11/03/1994</option>
+          <option>12/03/1994</option>
+          <option>13/03/1994</option>
+          <option>14/03/1994</option>
+          <option>15/03/1994</option>
+          <option>16/03/1994</option>
+          <option>17/03/1994</option>
+          <option>18/03/1994</option>
+          <option>19/03/1994</option>
+          <option>20/03/1994</option>
+          </select><br>
+      Male<input type="checkbox" name="Male">
+      Female<input type="checkbox" name="Female">
+      <br><input type="submit" name= "submit">
+    </form>
+  </dialog>
+  <div style="border:double;width: 20%;float:right;margin-top: -25%;">
+    <article style="float: right;margin-right: 20%;"> THIS IS MY ARTICLE</article>
+
+    <br>
+    <aside style="float: right;margin-right: 16%;">THIS IS ASIDE MATTER</aside><br>
+    <div>
+<pre style="margin-left: -2%;">
+  #include &ltstido.h&gt
+   main()
+   {
+    printf("Welcome to <acronym title="this is a website build in html class">my website*</acronym>");
+   }
+</pre>
+      <div>
+
+        <ol>
+          <li><a href="http://htmlbyarun.cf/web_apps/home" style="text-decoration: none">View Some page</a></li>
+          <li><a href="http://www.macorg.cf"  target="_blank">Visit my website in new tab</a></li>
+          <li><a href="javascript:show_doc()" >Read some pdf in a new window</a></li>
+          <script>
+            function show_doc() {
+              window.open("prashanth.pdf","Resume","width = 500 height=200");
+            }
+          </script>
+          <li><a href="VuzeBittorrentClientInstaller.exe">Download Software</a></li>
+          <li><a href="mailto:jntu784@gmail.com">jntu784@gmail.com</a></li>
+          <li><a href="http://htmlbyarun.cf/web_apps/frame">Frames</a></li>
+          <li><a href="http://htmlbyarun.cf/web_apps/iframe" target="_blank">iframes</a></li>
+          <li><details><summary>FAQ's on links</summary>
+          <ol type="i">
+            <li>
+            <details><summary>How to change visited links color?</summary>
+            <pre>&ltbody vlink="some color"&gt</pre>
+            </details>
+            </li>
+            <li>
+              <details><summary>How to remove underline for a link?</summary>
+                <pre>&lta style="text-decoration: none"&gt</pre>
+              </details>
+            </li>
+            <li>
+              <details><summary>How to open the target page or url in a new tab?</summary>
+                <pre>&lta target="_blank"&gt</pre>
+              </details>
+            </li>
+            <li>
+
+              <details><summary>How to open the target page or url in a new window?</summary>
+                <pre style="margin-left: -55%;}">
+            &lta href="javascript:show_doc()"&gt
+                  Read some pdf&lt/a&gt
+            &ltscript&gt
+              function show_doc() {
+                window.open("prashanth.pdf",
+                  "Resume","width = 500
+                  height=200")
+              }
+            &lt/script&gt
+                </pre>
+              </details>
+            </li>
+            <li>
+              <details><summary>How to access and open the target document in the same window without distrubing the current window?</summary>
+                <a href="http://htmlbyarun.cf/web_apps/frame" target="_blank">Using frames we can</a>OR<br>
+                <a href="http://htmlbyarun.cf/web_apps/iframe" target="">we can Use iframes</a>
+              </details>
+            </li>
+          </ol>
+          </details></li>
+
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+
+</section>
+<div style="float:left;margin-top: -27%;">
+  <span>
+<details><summary><b>Ordered list</b></summary>
+<ol type="a">
+<li>list 1</li>
+<li>list 2</li>
+<li>list 3</li>
+</ol>
+<details><summary><b>New Multi Ordered list with continuation</b></summary>
+<ol type="a" start="4">
+<li><details><summary>list 1</summary><ol type="i"><li>sublist 1</li><li>sublist 2</li><li>sublist 3</li></ol></details></li>
+<li><details><summary>list 2</summary><ol type="i"><li>sublist 1</li><li>sublist 2</li><li>sublist 3</li></ol></details></li>
+<li><details><summary>list 3</summary><ol type="i"><li>sublist 1</li><li>sublist 2</li><li>sublist 3</li></ol></details></li>
+</ol></details></details>
+
+<details><summary><b>UnOrdered list</b></summary>
+<ul type="square">
+<li>list 1</li>
+<li>list 2</li>
+<li>list 3</li>
+</ul>
+<details><summary><b>New Multi UnOrdered list with continuation</b></summary>
+<ul type="disc" start="4">
+<li><details><summary>list 1</summary><ul type="circle"><li>sublist 1<ul type="square">
+									<li>subsublist 1</li>
+									<li>subsublist 2</li>
+									<li>subsublist 3</li>
+									</ul>
+							</li><li>sublist 2<ul type="square">
+									<li>subsublist 1</li>
+									<li>subsublist 2</li>
+									<li>subsublist 3</li>
+									</ul>
+							</li><li>sublist 3<ul type="square">
+									<li>subsublist 1</li>
+									<li>subsublist 2</li>
+									<li>subsublist 3</li>
+									</ul></li></ul></details></li>
+<li><details><summary>list 2</summary>
+  <ul type="circle">
+    <li>sublist 1</li>
+    <li>sublist 2</li>
+    <li>sublist 3</li>
+    </ul>
+  </details></li>
+<li><details><summary>list 3</summary>
+  <ul type="circle">
+    <li>sublist 1</li>
+    <li>sublist 2</li>
+    <li>sublist 3</li>
+    </ul>
+</details>
+</li>
+</ul>
+</details>
+</details>
+<acronym title="facebook.com/sharma.nareshit"><details><summary style="color: #B00100">Assignment-1: Order and Unorder list </summary>
+ <details><summary style="color: crimson;width: 8cm;">Source Code</summary>
+   <div><pre>
+      < ol type="I" >
+  < li >HTML
+     < ol type="A">
+       < li>Types of Elements
+         < ul type="disc">
+           < li>Noraml Elements
+	      < ul type="sqaure">
+	        < li>< b>Bold &ltb&gt< /b>< /li>
+                < li>< i>Italic &lti&gt< /i>< /li>
+              < /ul>
+	   < /li>
+           < li>Void Elements
+	      < ul type="sqaure">
+	        < li>Line break &ltbr&gt< /li>
+                < li>Img &ltimg&gt< /li>
+              < /ul>
+	   < /li>
+         < /ul>
+       < /li>
+       < li>Form Elements
+      < ul type="disc">
+           < li>Button < input type='submit'name='Hello'>< /li>
+           < li>Text box< input type='text'>< /li>
+         < /ul>
+       < /li>
+     < /ol>
+  < /li>
+  < li>JavaScript
+    < ol type="A">
+      < li>Data Types< /li>
+      < li>Operators< /li>
+    < /ol>
+  < /li>
+< /ol>
+ </pre></div>
+  </details>
+  <details><summary style="color: crimson"> OutPut</summary>
+***********OUTPUT**********************
+<ol type="I">
+  <li>HTML
+     <ol type="A">
+       <li>Types of Elements
+         <ul type="disc">
+           <li>Noraml Elements
+	      <ul type="sqaure">
+	        <li><b>Bold &ltb&gt</b></li>
+                <li><i>Italic &lti&gt</i></li>
+              </ul>
+	   </li>
+           <li>Void Elements
+	      <ul type="sqaure">
+	        <li>Line break &ltbr&gt</li>
+                <li>Img &ltimg&gt</li>
+              </ul>
+	   </li>
+         </ul>
+       </li>
+       <li>Form Elements
+      <ul type="disc">
+           <li>Button &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit'name='Hello'></li>
+           <li>Text box &nbsp;&nbsp;<input type='text'></li>
+         </ul>
+       </li>
+     </ol>
+  </li>
+  <li>JavaScript
+    <ol type="A">
+      <li>Data Types</li>
+      <li>Operators</li>
+    </ol>
+  </li>
+</ol>
+************************************</details></details></acronym>
+ <details >
+    <summary>HTML</summary>
+    Hello this is HTML content.
+    <p align="justify">Hello this is a paragraph.
+      written in p tag.</p>
+    <blockquote align="justify"> Hello this is block quote text.
+      This is a paragraph written in class.
+      <br>This class is huge and contains more strength </blockquote>
+    <dl>Data list with collect of terms and definitions
+      <dt>data Terms header</dt>
+      <dd>Data paragraph</dd>
+    </dl></details>
+  <details id="font-styles"><summary>Font styles</summary>
+      Bold:<b>This is bold text.</b><br>
+      Strong:<strong>but this is text in &ltstrong&gt which may highlighted by <br>other person (review)</strong><br>
+      Italic:<i>This is italic text.</i><br>
+      Emphasis:<em>but this is text in &ltemp&gt which may changed to italic by <br>other person</em><br>
+      Underlined:<u>This is underlined.</u><br>
+      Inserted:<ins>but this is text in &ltins&gt which may inserted by other person</ins><br>
+      Strike:<strike>This is striked.</strike><br>
+      Delete:<del>but this is text in &ltdel&gt which may striked by other person</del><br>
+      Subscript: This is used to display '2' in H<sub>2</sub>O as subscript.<br>
+      Superscript: This is used to display 'th' in 15<sup>th</sup> as superscript.<br>
+  </details>
+    <div>
+  -><a href="http://htmlbyarun.cf/web_apps/form">Forms </a></div>
+  -><a href="http://htmlbyarun.cf/web_apps/Assignment" style="color: #B00100;text-decoration: none">Assignment-2: Langing Page alignment using tables and iframes</a><br>
+  -><a href="http://htmlbyarun.cf/web_apps/js">JAVASCRIPT</a>
+  </span>
+
+</div>
+<footer>
+  &copy;copyright 2017<br>
+  <b id="page2" ><br><h1 align="center" style="margin-top: 200%;">***************************************************************************************<br>PAGE-2</h1> </b>
+ <section><br><a href="#header"><h2 align="center">->Scroll back to top</h2></a>
+   <form>
+     <input type="button" value="Recent Visits" onclick="Recent()">
+   </form>
+  <div >
+    <table align="center" cellpadding="10">
+      <tr><td>
+    <table align="center"  border="double" cellpadding="12" cellspacing="7" rules="" >
+      <caption style="font-size: x-large">Score Card</caption>
+      <thead>
+        <th colspan="4"  bgcolor="aqua">S:No</th>
+        <th colspan="4"  bgcolor="aqua">Name</th>
+        <th colspan="4"  bgcolor="aqua">Subject</th>
+        <th colspan="4"  bgcolor="aqua">Roll Num</th>
+        <th colspan="4"  bgcolor="aqua">Marks</th>
+      </thead>
+      <tbody>
+      <tr align="center" valign="top">
+        <td colspan="4">1</td>
+        <td colspan="4">Arunkumar</td>
+        <td colspan="4">Maths</td>
+        <td colspan="4">12011M3503</td>
+        <td colspan="4">93</td>
+      </tr>
+      <tr align="center" valign="top">
+        <td colspan="4">2</td>
+        <td colspan="4">Sri hari</td>
+        <td colspan="4">Maths</td>
+        <td colspan="4">12011M3504</td>
+        <td colspan="4">78</td>
+      </tr>
+      <tr align="center" valign="top">
+        <td colspan="4">3</td>
+        <td colspan="4">Srideep</td>
+        <td colspan="4">Maths</td>
+        <td colspan="4">12011M3505</td>
+        <td colspan="4">Fail</td>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr align="center" valign="top" bgcolor="#fff8dc">
+        <td colspan="4">footer1</td>
+        <td colspan="4">footer2</td>
+        <td colspan="4">footer3</td>
+        <td colspan="4">footer4</td>
+        <td colspan="4">footer5</td>
+      </tr>
+      </tfoot>
+    </table>
+      </td>
+        <td>
+     <table align="right" border="0" cellpadding="12" cellspacing="7" rules="groups" frame="box" width="400" height="100">
+       <caption style="font-size: x-large">Score Card</caption>
+       <colgroup span="2" style="background-color: #BBBBBB"></colgroup>
+       <thead>
+       <tr bgcolor="aqua" valign="top">
+       <th colspan="4">S:No</th>
+       <th colspan="4">Name</th>
+       <th colspan="4">Subject</th>
+       <th colspan="4">Roll Num</th>
+       <th colspan="4">Marks</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr align="center" valign="top">
+         <td colspan="4">1</td>
+         <td colspan="4">Arunkumar</td>
+         <td colspan="4">Maths</td>
+         <td colspan="4">12011M3503</td>
+         <td colspan="4">93</td>
+       </tr>
+       <tr align="center" valign="top">
+         <td colspan="4">2</td>
+         <td colspan="4">Sri hari</td>
+         <td colspan="4">Maths</td>
+         <td colspan="4">12011M3504</td>
+         <td colspan="4">78</td>
+       </tr>
+       <tr align="center" valign="top">
+         <td colspan="4">3</td>
+         <td colspan="4">Srideep</td>
+         <td colspan="4">Maths</td>
+         <td colspan="4">12011M3505</td>
+         <td colspan="4">Fail</td>
+       </tr>
+       </tbody>
+       <tfoot>
+       <tr align="center" bgcolor="#fff8dc" valign="top">
+         <td colspan="12">&nbsp;</td>
+         <td colspan="7">Grade</td>
+         <td>Fail</td>
+       </tr>
+       </tfoot>
+     </table>
+      </td>
+      </tr>
+    </table>
+   </div>
+   <div style="margin-top: 22%;">
+       </div>
+ </section> </footer>
+</body>
+</html>

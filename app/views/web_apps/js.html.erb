@@ -1,0 +1,226 @@
+<ol>
+  <h2 align="center">Evolution of client-side script:</h2>
+
+
+  <li>ECMAScript is the 1st client side script used for web applications</li>
+    <li>Netscape communications appointed Brendan Eich in 1995 to design a
+  client side script for there browser netscape communicator.</li>
+  <li>Earlier it was named as "Mocha" and later as "Live Script".</li>
+  <li>In the year 1996, Netscape communications and Sun Micro systems
+  together announced JavaScript.</li>
+  <li>ECMA (European Computer Manufacturer ) Specifies JavaScript
+  standandards.</li>
+  <li>In the year 1988, MicroSoft started its free browser
+  "Internet Explorer" with its OS "Windows 98". The Other free browsers
+  were Mosaic, Opera, Safari, etc.</li>
+  <li>Netscape communications stopped its browser in the year 1999 and
+  handed over JavaScript to ECMA.</li>
+  <li>During the years 2000-2001, every browser started its own JavaScript
+  to match the market requirements. This leads to browser incompatibility
+  issues.</li>
+  <li>In the year 2002, W3C took over JavaScript language from ECMA. The
+  latest version of JavaScript by W3C is ECMAScript 2017.</li>
+  <li>In the year 2006, A library by name "JQuery" was introduced to
+  handle the browser incompatibility issues implicitly. However a library
+  or script cannot control the application flow. We need a framework
+  (Knockout js, Angular js, etc.).</li>
+  <table align="left">
+    <td>
+  <img src="/flow.jpg" width="600" height="700">
+    </td>
+  </table>
+
+</ol>
+<ol>
+  <h3>Integrate JavaScript with HTML</h3>
+  <li><details><summary>JavaScript inline</summary>
+    <html>
+    <head><title>JavaScript Inline</title></head>
+    <body style="color: darkgreen" >
+    <form style="color: black">
+      <h4>Click print to print the page contents</h4>
+      --><input type="button" value="print" onclick="window.print();">
+    </form>
+    </body>
+    </html></details></li>
+  <li><details><summary>JavaScript Embeded</summary>
+
+      <h3 style="color: black;">Javascript Embed</h3>
+       <p style="color: black">In this method javaScript functions are defined in the page by using the &ltscript&gt <br>
+        So that they are accessible to any element within the page</p>
+      <html>
+      <title>JavaScript Embed</title>
+      <script type="text/javascript">
+        <!--
+        function printPage() {
+          window.print();
+        }
+        -->
+      </script>
+      <body>
+      <form style="color:black;">
+        <h4>Click print to Print content in the page</h4>
+        --><input type="button" value="print" onclick="printPage();">
+      </form>
+      </body>
+      </html>
+      <p style="color: black">A client side script is defined by using its MIME type or language. A MIME type will give access
+        to various file extensions.The JavaScript MIME type is "text/javascript"</p>
+      <h4 style="color: black">Target JavaScript towards Old Version browsers:</h4>
+      <p style="color: black">The JavaScript functions must be enclosed in HTML comments in order to target any old version browsers.</p>
+      <pre style="color: black">
+    &ltscript type="text/javascript"&gt
+      &lt!--
+      function PrintPage() {
+        window.print();
+      }
+      --&gt
+    &lt/script&gt
+  </pre><br></details></li>
+  <li><details><summary>JavaScript External File</summary>
+    <h3 style="color: black">JavaScript in External File</h3>
+  <p style="color: black">Javascript functions are declared in separate file which has .js extension so that they're accessible from any page.<br>
+    we can even minify and use the minified script </p>
+  <html>
+  <head><title>JavaScript External File</title>
+    <script src="printPage.js"></script>
+  </head>
+  <body>
+
+  <form style="color: black">
+    <h4>Click print to Print content in the page</h4>
+    --><input type="button" value="print" onclick="eprintPage();">
+  </form>
+
+  </body>
+  </html><br>
+  <p style="color: black">Using external file will increase the number of requests to a page also the page load time</p>
+  </details>
+
+
+</ol>
+
+  <h4>Strict Mode</h4>
+  <details><summary>JavaScript have browser incompatibility issues hence a developer is recommended to write the code in strict mode. so that we can reduce the incompatibility issues.</summary>
+  <h5>Example</h5>
+    <pre style="color: black">
+    &ltscript type="text/javascript"&gt
+      &lt!--
+      "use strict;"
+      function PrintPage() {
+        window.print();
+      }
+      --&gt
+    &lt/script&gt
+  </pre>
+  </details><br>
+</ul>
+<ol>
+  <h4>JavaScript Comments</h4>
+  <li><details><summary>Single line comments</summary>
+    <h5>Example</h5>
+  <p style="color: black">// Your comment</p></details></li>
+  <li><details><summary>Multi line comments</summary>
+    <h5>Example</h5>
+    <p style="color: black">/* your
+      <br>comments
+      */</p>
+  </details></li>
+
+</ol>
+<ol>
+</ol>
+<table>
+  <td>
+<ol>
+  <h3>How JavaScript Refers the Elements of HTML?</h3>
+  <p>->Html is used to present static DOM and JavaScript is used to manipulate the DOM. <br>JavaScript can refer the HTML elements by using any one of the following methods</p>
+  <li><details>
+    <summary> Using BOM hierarchy</summary>
+    <p style="color: black">In this method HTML elements are accessible by using the document model where every element is defined like an array.<br>
+      We can use the index number to access the element. However, changing the position of an element in a page will effect its reference.</p>
+    ---><a href="http://htmlbyarun.cf/web_apps/UsingBOM" target="_blank">Example</a>
+  </details></li>
+  <li><details>
+    <summary> Using Name</summary>
+    <p style="color: black">Every element in HTML can be defined with a "name" attribute so that we can access the elements by<br> referring to given name.
+      However, if the element is a child elementn then we have to access<br> only with the reference of its parent element</p>
+    ---><a href="http://htmlbyarun.cf/web_apps/UsingName" target="_blank">Example</a>
+  </details></li>
+  <li>
+  <details>
+    <summary> Using ID</summary>
+    <p style="color: black">Every element in HTML can be defined with a unique "id". The Javascript document object provides a function "getElementById()" <br>
+      Which is used to access any element without following the hierarchy. However, ID have a conflict with CSS id selector.</p>
+    ---><a href="http://htmlbyarun.cf/web_apps/UsingID" target="_blank">Example</a>
+  </details></li>
+  <li>
+  <details>
+    <summary> Using Tag Name</summary>
+    <p style="color: black">The Document object of javascript provides function "getElementsByTagName()", which is used to search for elements <br>
+      that are defined by using the given tag name. It returns an array of elements so that we can count the number of elements by using "length".</p>
+    ---><a href="http://htmlbyarun.cf/web_apps/UsingTagName" target="_blank">Example</a>
+  </details></li>
+  <li>
+  <details>
+    <summary> Using Class name</summary>
+    <p style="color: black">To apply Styles we can access all the elements a css class with the help of the function "getElementsByClassName()"</p>
+    ---><a href="http://htmlbyarun.cf/web_apps/UsingClass" target="_blank">Example</a>
+  </details></li>
+  <li>
+  <details>
+    <summary> Using Reference Name (Different Elements using same name)</summary>
+    <p style="color: black">In HTML, various elements can use a common reference name so that among all specified elements<br>
+      only one element will be accessed. We can refer all elements by using the function "getElementsByName()".</p>
+    ---><a href="http://htmlbyarun.cf/web_apps/UsingReferName" target="_blank">Example</a>
+  </details></li>
+ </ol>
+  </table>
+<details>
+  <summary><font size="4" style="font-weight: bold">Various Output Functions and Properties</font></summary>
+  <ol>
+    <li><a href="http://htmlbyarun.cf/web_apps/Outputfunctionsproperties">alert()</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Outputfunctionsproperties">confirm()</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Outputfunctionsproperties">document.write()</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Outputfunctionsproperties">console.log()</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Outputfunctionsproperties">innerHTML</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Outputfunctionsproperties">innerText</a></li>
+  </ol>
+</details>
+<details>
+  <summary><font size="4" style="font-weight: bold">Various Input Functions and Properties</font></summary>
+  <ol>
+    <li><a href="http://htmlbyarun.cf/web_apps/Inputfunctionsproperties">prompt()</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Inputfunctionsproperties">form input elements</a></li>`
+  </ol>
+</details>
+<details>
+  <summary><font size="4" style="font-weight: bold">JavaScript Language Basics</font></summary>
+  <ol>
+    <br><br><br>
+    <li><a href="http://htmlbyarun.cf/web_apps/Variables" target="_blank">Variables</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/DataTypes" target="_blank">Data Types</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Operators" target="_blank">Operators</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Expressions" target="_blank">Expressions</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Statements" target="_blank">Statements</a></li>
+    <li><a href="http://htmlbyarun.cf/web_apps/Built_in_Objects" target="_blank">Built-in Objects</a></li>
+  </ol>
+</details>
+<details>
+  <summary><font size="4" style="font-weight: bold">JavaScript Events</font></summary>
+  <ol>
+    <br><br>
+   <li>Event is a message sent by sender to its subscriber to notify the change.</li>
+    <li>Event follows a software design pattern called Observer.</li>
+    <li>It is a common communication pattern used by objects to communicate with their classes</li>
+    <li>The JavaScript Events are classified into following types:
+      <ul>
+        <li><a href="http://htmlbyarun.cf/web_apps/events">Mouse Events</a></li>
+        <li><a href="http://htmlbyarun.cf/web_apps/events">Key Events</a></li>
+        <li><a href="http://htmlbyarun.cf/web_apps/events">Miscellaneous Events</a></li>
+      </ul>
+    </li>
+    <font size="4" style="font-weight: bold" ><pre>-><a href="http://htmlbyarun.cf/web_apps/Event" target="_blank">JavaScript Event Handling</a></pre> </font>
+  </ol>
+</details>
+<br><br><br>

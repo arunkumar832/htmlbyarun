@@ -1,0 +1,195 @@
+<html>
+<head><title>Variables</title></head>
+<script>
+  "use strict";
+  var x = 999;
+  function f1() {
+      x = prompt("Enter the x value");
+    document.write("<br>Entered X value is = "+x);
+    if(x>10)
+    {
+      var y = 100;
+      document.write("<br>Y value is = "+y);
+    }
+    else
+    {
+      var y = -10;
+      document.write("<br>Y value is = "+y);
+    }
+    document.write("<br>X - Y = "+(x-y));
+
+  }
+  function f2() {
+    document.write("<br>X value is = "+x);
+  }
+
+
+</script>
+<body bgcolor="#7fffd4">
+
+  <font size="4" style="font-weight: bold">Varibles in JavaScript</font><form>
+    <input type="button" value="Ask X Value" onclick="f2();f1();">
+  </form>
+  <ol>
+    <li>
+     Variables are simply storage locations in memory, where we can store a value and use it as a part of any expression.</li>
+    <li><details>
+      <summary> The JavaScript variables are implicitly typed. i.e. There data type will be determined according to the value assigned.</summary>
+      <ul>Syntax: x = 10;-->integer<br>x = "John";-->String</ul>
+    </details>
+    </li>
+    <li><details>
+      <summary>Declaring of variables is mandatory in "strict" mode</summary>
+      <pre>
+      <u>Syntax:</u>
+      &ltscript&gt
+      "use strict"
+      function f1() {
+      x = 10; //invalid
+      alert("X = "+x);
+        }
+      &lt/script&gt
+    </pre>
+      Note: If we are not using strict mode the above syntax is valid
+    </details></li>
+
+    <li>
+      <details>
+        <summary>JavaScript variables can be declared by using the following keywords.</summary>
+        <table border="2" bgcolor="#008b8b" style="color:white;text-align: center">
+          <thead>
+          <th>Variable</th>
+          <th>Description</th>
+          </thead>
+          <tr>
+            <td>var</td>
+            <td>It declares a variable, which is function scope and can be reassigned</td>
+          </tr>
+          <tr>
+            <td>let</td>
+            <td>It declares a variable, which is block scope and can be reassigned</td>
+          </tr>
+          <tr>
+            <td>const</td>
+            <td>It declares a variable within the block and cannot be reassigned</td>
+          </tr>
+        </table>
+        <pre>
+      <u>Syntax:</u> const
+      &ltscript&gt
+      "use strict"
+      function f1() {
+      const x = 10;
+      x = 30; //error
+      alert("Function-1 X = "+x);
+        }
+      f1();
+      &lt/script&gt</pre>
+        Note: If x is defined with var or let, above syntax is valid X = 30;
+      </details>
+    </li>
+
+    <li>
+      <details>
+        <summary>The global in Javascript can be defined outside the function within the script area and within the function without var or let.</summary>
+        <pre>
+      <u>Syntax:</u> const
+      &ltscript&gt
+      var x = 10; //global
+      function f1() {
+      y = 10;
+      x = 30; //error
+      alert("Function-1 X = "+x);
+      alert("Function-1 Y = "+y);
+        }
+      f1();
+      &lt/script&gt</pre>
+      </details>
+    </li>
+
+    <li>
+      <details>
+        <summary>
+          The global variables can be defined in a function by using window object, if JavaScript is in strict mode.
+        </summary>
+        <pre>
+      <u>Syntax:</u> Global variable declaration in strict mode
+      &ltscript&gt
+      "use strict";
+      function f1() {
+     window.x = 10; //global variable
+        }
+      f1();
+      &lt/script&gt</pre>
+      </details>
+    </li>
+
+    <li>
+      <details>
+        <summary>
+          The variables in javascript are affected with shadowing when declared using var or let.
+          i.e. The values can be reassigned for variable.
+        </summary>
+        <pre>
+      <u>Syntax:</u> Shadowing
+      &ltscript&gt
+      var x = 10;
+      var y = 30;
+      function f1() {
+      var x = 20;
+      y = 40;
+      alert("X = "+x); //X = 20
+      alert("Y = "+y); //Y = 40
+        }
+      f1();
+      function f2() {
+      alert("X = "+x);//X = 10
+      alert("Y = "+y);//Y = 40
+      }
+      &lt/script&gt</pre>
+      </details>
+    </li>
+
+    <li>
+      <details>
+        <summary>
+          The JavaScript variables are hoisted, that is the declartion of the variables are done first by the
+          interpreter and then the variables are used. Hence we can assign a value before it is declared in our code snippet.
+        </summary>
+        <pre>
+      <u>Syntax:</u>
+      &ltscript&gt
+      function f1() {
+       x = 10; //x is hoisted
+       var x;
+       alert("X = "+x);
+        }
+      f1();
+      &lt/script&gt</pre>
+      </details>
+    </li>
+
+    <li>
+      <details>
+        <summary>
+          The normalization for naming variables include the following:
+        </summary>
+        <ol type="a">
+          <li>Variable name must start with _ or alphabet</li>
+          <li>It can't have blank spaces and periods (dot).</li>
+          <li>It can be alpha numeric with _ and few special characters.</li>
+          <li>Can't start with a number.</li>
+          <li>Variables are case sensitive.</li>
+          <li>It's name must be unique with the scope if declared by using "const".</li>
+          <li>The length of the variable name can vary according to the browser.(255 chars is the stable length as per ECMA).</li>
+
+        </ol>
+      </details>
+    </li>
+
+
+  </ol>
+
+<br><br><br>
+</body>
+</html>

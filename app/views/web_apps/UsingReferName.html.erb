@@ -1,0 +1,26 @@
+<html>
+<head><title>Using Reference Name</title>
+  <script type="text/javascript">
+    function bodyload() {
+      y = document.getElementsByName("pic");
+      x = document.getElementsByName("txt");
+      alert("Total number of input elements with Reference Name: "+x.length);
+      alert("Total number of image elements with Reference Name: "+y.length);
+    }
+  </script>
+</head>
+<body onload="bodyload()">
+<h2>Using Reference Name</h2>
+
+<img height="100" width="100" name='pic' id="pic">
+
+<form name="form1">
+  <h2>Form1</h2>
+  <input type="text" name='txt' id="txtName">
+</form>
+<form name="form2">
+  <h2>Form2</h2>
+  <input type="button" name='txt'id="btntxt">
+</form>
+</body>
+</html>

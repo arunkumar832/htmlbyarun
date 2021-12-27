@@ -1,0 +1,25 @@
+<html>
+<head><title>Using ID</title>
+  <script type="text/javascript">
+    function bodyload() {
+      document.getElementById("pic").src="/men.gif";
+      document.getElementById("txtName").value = "Arun";
+      document.getElementById("btntxt").value = "Submit"
+    }
+  </script>
+</head>
+<body onload="bodyload()">
+<h2>Using ID</h2>
+
+<img height="100" width="100" name='pic' id="pic">
+
+<form name="form1">
+  <h2>Form1</h2>
+  <input type="text" name='txtName' id="txtName">
+</form>
+<form name="form2">
+  <h2>Form2</h2>
+  <input type="button" name='btntxt'id="btntxt">
+</form>
+</body>
+</html>

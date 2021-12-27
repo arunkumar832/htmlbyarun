@@ -1,0 +1,27 @@
+<html>
+<head><title>Using Name</title>
+  <script type="text/javascript">
+    function bodyload() {
+      pic.src="/flow.jpg";
+      form1.txtName.value="Arun";
+      form2.btntxt.value="Submit";
+
+    }
+  </script>
+</head>
+<body onload="bodyload()">
+<h2>Using Name</h2>
+
+
+<img height="100" width="100" name='pic'>
+
+<form name="form1">
+  <h2>Form1</h2>
+  <input type="text" name='txtName'>
+</form>
+<form name="form2">
+  <h2>Form2</h2>
+  <input type="button" name='btntxt'>
+</form>
+</body>
+</html>

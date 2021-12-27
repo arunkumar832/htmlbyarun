@@ -1,0 +1,131 @@
+<html>
+<head>
+  <title>MultiLevel Condition statments</title>
+</head>
+<script>
+  function PayClick() {
+    var pin = document.getElementById("txtPin1").value;
+    var cvv = document.getElementById("txtCvv1").value;
+    var year = document.getElementById("LstYear1").value;
+    var msg = document.getElementById("msg");
+    if(pin==1234)
+    {
+
+      if(cvv==123)
+      {
+        if(year==2020)
+        {
+          document.write("Payment Successful...");
+        }
+        else
+        {
+          msg.innerHTML="<br><font color='red' style='font-weight: bold'>Invalid Year</font>";
+        }
+      }
+      else
+      {
+        msg.innerHTML="<br><font color='red' style='font-weight: bold'>Invalid CVV</font>";
+      }
+    }
+    else
+    {
+
+      msg.innerHTML="<br><font color='red' style='font-weight: bold'>Invalid Pin</font>";
+    }
+  }
+  function PayChange() {
+    var pin = document.getElementById("txtPin2").value;
+    var cvv = document.getElementById("txtCvv2").value;
+    var year = document.getElementById("LstYear2").value;
+    var txtcvv = document.getElementById("txtCvv2");
+    var LastYear = document.getElementById("LstYear2");
+    var Pay2 = document.getElementById("Pay2");
+    if(pin==1234)
+    {
+     txtcvv.disabled = false;
+      txtcvv.focus();
+      if(cvv==123)
+      {
+        LastYear.disabled = false;
+        LastYear.focus();
+        if(year==2020)
+        {
+          Pay2.disabled = false;
+        }
+        else
+        {
+          Pay2.disabled = true;
+        }
+
+      }
+      else
+      {
+        LastYear.disabled = true;
+        Pay2.disabled = true;
+      }
+    }
+    else
+    {
+      //$('input#txtCvv2').attr("disabled", "disabled");
+      txtcvv.disabled = true;
+      LastYear.disabled = true;
+      Pay2.disabled = true;
+    }
+  }
+  function Display() {
+    document.write("Payment Successful...");
+  }
+</script>
+<body>
+<header>
+  <h1 align="center">MultiLevel Condition statements</h1>
+  <h3>IF-ELSE statement:</h3>
+</header>
+<div align="center">
+  <form>
+    <fieldset>
+      <legend>Payment</legend>
+      <table border="2" cellpadding="30" cellspacing="3">
+        <tr>
+          <td align="left" width="400">
+            Enter Pin: <input type="text" id="txtPin1" size="4" maxlength="4" title=""> &nbsp;<small style="color: green">Default pin is 1234</small><br><br>
+            Enter CVV: <input type="text" id="txtCvv1" size="3" maxlength="3" title=""  > &nbsp;<small style="color: green">Default CVV is 123</small><br><br>
+            Expiry Year:
+            <select id="LstYear1" title="">
+              <option id="2018" selected>2018</option>
+              <option id="2018">2019</option>
+              <option id="2018">2020</option>
+              <option id="2018">2021</option>
+            </select> &nbsp;<small style="color: green">Default Year is 2020</small><br><br>
+            <input type="button" value="PAY" onclick="PayClick()" id="Pay1" ><br>
+            <div id="msg"></div>
+          </td>
+
+<!--************************************ Another Form **********************************************************-->
+
+          <td align="left" width="400">
+            Enter Pin: <input type="text" id="txtPin2" size="4" maxlength="4" title="" onchange="PayChange()"> &nbsp;<small style="color: green">Default pin is 1234</small><br><br>
+            Enter CVV: <input type="text" id="txtCvv2" size="3" maxlength="3" title="" onchange="PayChange()" disabled > &nbsp;<small style="color: green">Default CVV is 123</small><br><br>
+            Expiry Year:
+            <select id="LstYear2" title="" onchange="PayChange()" disabled>
+              <option value="2018" selected>2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+            </select> &nbsp;<small style="color: green">Default Year is 2020</small><br><br>
+            <input type="button" value="PAY" id="Pay2"  onclick="Display() " disabled >
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+  </form>
+</div>
+<div>
+  <ol>
+    <li>It is a selection statement programming approach that will test muliple conditions inorder to execute a set of statments.</li>
+    <li>It uses a multiLevel hierarchy to test the conditions.</li>
+    <li>It is generally called as Ladder if else in other languages.</li>
+  </ol>
+</div>
+</body>
+</html>

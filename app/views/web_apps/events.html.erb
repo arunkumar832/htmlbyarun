@@ -1,0 +1,177 @@
+<html>
+<head>
+  <title>Events</title>
+</head>
+<script>
+
+  function bodyload() {
+      //  Example 2*******************************************************************************************
+      var cars = new Array("/car1.jpg","/car2.jpg","/car3.jpg","/car4.jpg","/car5.jpg","/car6.jpg");
+      for(var i=0; i<cars.length;i++)
+      {
+          var img = new Image();
+          img.src = cars[i];
+          img.width = "200";
+          img.width = "200";
+          document.getElementById("cars").appendChild(img);
+      }
+      //  Example 2*******************************************************************************************
+
+  }
+
+</script>
+<body onload="bodyload()" onmousemove="UpdateFlyingObj(event)">
+<h3>JavaScript Mouse Events</h3>
+<ol>
+<li>
+  JavaScript provides several functions that are used to handle various interactions with regard to mouse events.
+ <table rules="all" border="2" style="text-align-last: center">
+   <thead >
+   <th>Event</th>
+   <th>Description</th>
+   <tr>
+     <td>onmouseover</td>
+     <td>It indicates the action to perform when mouse pointer is moved over any html element.</td>
+   </tr>
+   <tr>
+     <td>onmouseout</td>
+     <td>It indicates the actions to perform when mouse pointer is moved out of any html element.</td>
+   </tr>
+   <tr>
+     <td>onmousedown</td>
+     <td>It indicates the actions when user hold down mouse button.</td>
+   </tr>
+   <tr>
+     <td>onmouseup</td>
+     <td>It specifies actions on release of mouse button.</td>
+   </tr>
+   <tr>
+     <td>onmousemove</td>
+     <td>It specifies actions to perform when user is moving the mouse pointer over element.</td>
+   </tr>
+   </thead>
+ </table>
+</li>
+  <ul>
+    <li>
+  <details>
+    <summary>Example 1: Actions performed when mouse over, out, up and down.</summary>
+
+  <div align="center">
+    <div align="left">
+      <img src="/men.gif" width="400" height="300" id="ad" onmouseover="ad1()" onmouseout="ad2()" style="float: left"><br><br>
+    </div><br>
+    <p id="msg1" >Move mouse over the ad to change it.</p>
+    <br><br>
+    <img src = "/bulboff.jpg" id="bulb" width="90" height="100">
+    <input type="button" onmousedown="bulbon()" onmouseup="bulboff()" value="Light bulb">
+    <p>Press and hold to light bulb</p>
+
+    <script>
+        function ad1() {
+            document.getElementById("ad").src= "/kfctop.png";
+            document.getElementById("msg1").innerHTML = "<a href='http://kfc.com'>KFC India</a>"
+        }
+        function ad2() {
+            document.getElementById("ad").src= "/kfcmiddle.png";
+            document.getElementById("msg1").innerHTML = "<a href='http://kfc.com'>KFC Advertisement";
+        }
+        function bulbon() {
+            document.getElementById("bulb").src= "/bulbon.jpg";
+        }
+        function bulboff() {
+
+            document.getElementById("bulb").src= "/bulboff.jpg";
+        }
+    </script>
+  </div>
+  </details>
+</li>
+    <li>
+      <div>
+        <details>
+          <summary>Example 2: Mouse Events to handle animation with CSS plugins</summary>
+          <marquee onmouseover="this.stop()" onmouseout="this.start()" id="gallery"><div id="cars"></div></marquee>
+          <style>
+            #gallery img
+            {
+              width: 200px;
+              height: 200px;
+              -webkit-transition-duration: 0.6s;
+              -moz-transition-duration: 0.6s ;
+              -o-transition-duration: 0.6s;
+              opacity: 0.6;
+              z-index:1;
+              margin: 0;
+              position: relative;
+            }
+              #gallery img:hover{
+                -webkit-transform: scale(1.5) ;
+                -moz-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                -webkit-box-shadow: 0px 0px 25px gray;
+                -moz-box-shadow: 0px 0px 25px gray;
+                -o-box-shadow: 0px 0px 25px gray;
+                opacity: 1;
+                z-index: 10;
+              }
+          </style>
+        </details>
+      </div>
+    </li>
+    <li>
+      <div>
+        <details>
+          <summary>Example 3: Mouse Events to handle animation with CSS plugins</summary>
+
+          <br>
+          <img src="/car2.jpg" width="400" height="300" id="carpic" onmousemove="MouseMove(event)">
+          <div align="center" id="msg2"></div>
+          <script>
+            function MouseMove(e) {
+                var msg = document.getElementById("msg2");
+                if((e.clientX>= 108 && e.clientX<460)&&(e.clientY<= 565 && e.clientY>370))
+                {
+                 msg.innerHTML = "Mouse is on over car";
+                }
+                else
+                    msg.innerHTML = "X = "+e.clientX+"<br>"+"Y = "+e.clientY;
+            }
+          </script>
+        </details>
+      </div>
+    </li>
+    <li>
+      <div>
+        <style>
+          #flying
+          {
+            position: fixed;
+          }
+        </style>
+        <details>
+          <summary>Example 4: Mouse Events to handle animation with CSS plugins</summary>
+          <ol>
+            <li>The JavaScript mouse move event provides the arguments clientX and clientY that are used to get X and Y axis positions of mouse pointer. </li>
+          </ol>
+          <div align="center" style="height: 1000px">
+            <font size="4" style="font-weight: bold;color: green"></font>
+          </div>
+          <img src="/flag.gif" id="flying" width="100" height="100">
+          <script>
+              function UpdateFlyingObj(e) {
+                  var flyingobj = document.getElementById("flying");
+                  var mouseX = Math.round(e.clientX);
+                  var mouseY = Math.round(e.clientY)
+                  flyingobj.style.left = mouseX+"px";
+                  flyingobj.style.top = mouseY+"px";
+              }
+          </script>
+        </details>
+      </div>
+    </li>
+  </ul>
+</ol>
+
+</body>
+</html>
